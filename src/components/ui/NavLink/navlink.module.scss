@@ -1,0 +1,10 @@
+@import '../../../assets/styles/variables';
+
+.link {
+    @extend %size_body;
+
+    font-weight: 700;
+    text-decoration: none;
+    color: $color_black;
+    margin-right: 60px;
+}

@@ -1,0 +1,45 @@
+$color_black: #000000;
+$color_grey: #4d4d4d;
+$color_orange: #cd4631;
+$color_champane: #f7ede8;
+$color_light_blue: #edf3f7;
+
+%size_display {
+    font-size: 96px;
+    line-height: 100%;
+    letter-spacing: -3.84px;
+}
+
+%size_h1 {
+    font-size: 59.3px;
+    line-height: 120%;
+    letter-spacing: -0.733px;
+}
+
+%size_h2 {
+    font-size: 36.65px;
+    line-height: 100%;
+    letter-spacing: -2%;
+}
+
+%size_h3 {
+    font-size: 59.3px;
+    line-height: 120%;
+    letter-spacing: -2%;
+}
+
+%size_body {
+    font-size: 16px;
+    line-height: 160%;
+}
+
+%size_caption {
+    font-size: 14px;
+    line-height: 160%;
+}
+
+%size_small {
+    font-size: 59.3px;
+    line-height: 120%;
+    letter-spacing: -2%;
+}
