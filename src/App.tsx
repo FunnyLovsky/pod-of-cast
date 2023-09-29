@@ -1,13 +1,11 @@
 import React from 'react'
-import Header from './components/layout/Header/Header'
-import Intro from './components/layout/Intro/Intro'
 import './assets/styles/style.scss'
+import Main from './pages/Main'
 
 const App = () => {
     return (
         <>
-            <Header />
-            <Intro />
+            <Main />
         </>
     )
 }

@@ -3,6 +3,15 @@ $color_grey: #4d4d4d;
 $color_orange: #cd4631;
 $color_champane: #f7ede8;
 $color_light_blue: #edf3f7;
+$color_blue: #81adc8;
+
+%transition {
+    transition: 0.3s;
+    &:hover {
+        transform: translate(10px, 10px);
+        cursor: pointer;
+    }
+}
 
 %size_display {
     font-size: 96px;

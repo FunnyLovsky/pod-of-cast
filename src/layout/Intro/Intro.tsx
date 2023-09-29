@@ -1,18 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './intro.module.scss'
-import Container from '../../ui/Container/Container'
-import Button from '../../ui/Button/Button'
-import VECTOR_1 from '../../../assets/images/vector_4.svg'
-import VECTOR_2 from '../../../assets/images/vector_2.svg'
+import Container from '../../components/ui/Container/Container'
+import Button from '../../components/ui/Button/Button'
+import VECTOR_1 from '../../assets/images/vectors/vector_4.svg'
+import VECTOR_2 from '../../assets/images/vectors/vector_2.svg'
+import Cover from '../../components/Cover/Cover'
+import Support from '../../components/Support/Support'
 
 const Intro = () => {
-    const [cover] = useState([
-        {
-            img: VECTOR_1,
-            title: 's',
-        },
-    ])
-
     return (
         <>
             <div className={styles.intro}>
@@ -28,17 +23,13 @@ const Intro = () => {
                         </h4>
                         <Button>Subscribe</Button>
                     </div>
+                    <img src={VECTOR_1} alt="" className={styles.vector} />
                     <img src={VECTOR_2} alt="" className={styles.vector_2} />
                 </Container>
-                <img src={VECTOR_1} alt="" className={styles.vector} />
-                <div className={styles.cover}>
-                    {cover.map((elem) => (
-                        <div key={elem.img}>
-                            <h4>{elem.title}</h4>
-                            <img src={elem.img} alt="" />
-                        </div>
-                    ))}
-                </div>
+                <Cover />
+                <Container>
+                    <Support />
+                </Container>
             </div>
         </>
     )

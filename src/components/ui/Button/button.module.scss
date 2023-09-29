@@ -10,4 +10,6 @@
     @extend %size_caption;
     font-weight: 700;
     text-transform: uppercase;
+
+    @extend %transition;
 }

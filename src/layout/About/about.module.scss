@@ -1,0 +1,53 @@
+.about {
+    position: relative;
+}
+
+.scribe {
+    position: absolute;
+    top: -76px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    animation: scribe 3s infinite;
+}
+
+.title {
+    margin: 0 auto;
+    width: 735px;
+    padding-top: 140px;
+    text-align: center;
+    font-size: 59.3px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -1.186px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.item {
+    width: 472px;
+    text-align: center;
+
+    & h4 {
+        font-weight: 500;
+        font-size: 16px;
+        margin-top: 40px;
+        line-height: 160%;
+    }
+}
+
+@keyframes scribe {
+    0% {
+        transform: translateX(-50%) translateY(-30px);
+    }
+    50% {
+        transform: translateX(-50%) translateY(30px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-30px);
+    }
+}

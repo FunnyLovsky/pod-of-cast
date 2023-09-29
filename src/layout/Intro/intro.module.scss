@@ -1,4 +1,4 @@
-@import '../../../assets/styles/variables';
+@import '../../assets/styles/variables';
 
 .intro {
     background: $color_champane;
@@ -41,7 +41,7 @@
 
 .vector {
     top: 70px;
-    left: 0;
+    left: -180px;
     position: absolute;
     animation: translate 5s ease infinite;
 }

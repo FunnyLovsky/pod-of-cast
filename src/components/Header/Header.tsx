@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './header.module.scss'
-import Container from '../../ui/Container/Container'
-import NavButton from '../../ui/NavButton/NavButton'
-import NavLink from '../../ui/NavLink/NavLink'
-import LOGO from '../../../assets/images/logo.svg'
-import ArrowDown from '../../../assets/images/arrowDown.svg'
+import Container from '../ui/Container/Container'
+import NavButton from '../ui/NavButton/NavButton'
+import NavLink from '../ui/NavLink/NavLink'
+import LOGO from '../../assets/images/icons/logo.svg'
+import ArrowDown from '../../assets/images/vectors/arrowDown.svg'
 
 const Header = () => {
     return (
