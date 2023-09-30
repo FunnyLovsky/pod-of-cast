@@ -1,0 +1,66 @@
+@import '../../assets/styles/variables.scss';
+
+.recom {
+    width: 100%;
+    background: $color_light_blue;
+    padding-top: 140px;
+}
+
+.title {
+    text-align: center;
+    font-size: 59.3px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 71.16px */
+    letter-spacing: -1.186px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 22.65px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    color: $color_grey;
+    margin-top: 20px;
+}
+
+.slider {
+    display: flex;
+
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin: 100px 0 0 0;
+}
+
+.item {
+    background: #fff;
+    position: relative;
+    // width: 570px;
+    // height: 360px;
+    margin-right: 20px;
+    padding: 132px 40px 40px;
+    border-radius: 8px;
+}
+
+.elem {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: $color_orange;
+    text-align: center;
+    font-size: 95.95px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -1.919px;
+}
+
+.text {
+    // padding: 132px 40px 0;
+    font-size: 22.65px;
+    font-style: normal;
+    width: 490px;
+    font-weight: 500;
+    line-height: 160%; /* 36.24px */
+}

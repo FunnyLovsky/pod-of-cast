@@ -1,0 +1,29 @@
+.users {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+
+    &:first-child {
+        margin-right: 10px;
+    }
+
+    & img {
+        margin-right: 10px;
+        border-radius: 50%;
+    }
+
+    & h4 {
+        line-height: 160%;
+        font-size: 14px;
+    }
+}
+
+.name {
+    font-weight: 500;
+}

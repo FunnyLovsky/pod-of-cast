@@ -1,14 +1,19 @@
-import React from 'react'
-import Header from '../components/Header/Header'
+import React, { useEffect } from 'react'
+
 import Intro from '../layout/Intro/Intro'
 import About from '../layout/About/About'
+import Recom from '../layout/Recom/Recom'
 
 const Main = () => {
+    useEffect(() => {
+        document.title = 'Pod of Cast'
+    }, [])
+
     return (
         <>
-            <Header />
             <Intro />
             <About />
+            <Recom />
         </>
     )
 }

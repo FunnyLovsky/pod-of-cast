@@ -13,6 +13,8 @@
     position: absolute;
     top: -50px;
     right: -50px;
+
+    animation: star 8s linear infinite;
 }
 
 .vector {
@@ -72,4 +74,16 @@
 
 .name {
     font-weight: 500;
+}
+
+@keyframes star {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(0.7);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
 }

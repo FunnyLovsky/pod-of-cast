@@ -1,17 +1,18 @@
 import React from 'react'
 import styles from './navlink.module.scss'
+import { NavLink } from 'react-router-dom'
 
 interface Props {
     children: string | JSX.Element | JSX.Element[]
     href: string
 }
 
-const NavLink = ({ children, href }: Props) => {
+const NavLinks = ({ children, href }: Props) => {
     return (
-        <a href={href} className={styles.link}>
+        <NavLink to={href} className={styles.link}>
             {children}
-        </a>
+        </NavLink>
     )
 }
 
-export default NavLink
+export default NavLinks
