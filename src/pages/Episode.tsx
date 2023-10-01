@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Intro from '../layout/Intro/Intro'
 
 const Episode = () => {
+    useEffect(() => {
+        document.title = 'Episode - Pod of Cast'
+    }, [])
+
     return (
         <>
-            <h1>Episode</h1>
+            <Intro />
         </>
     )
 }

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React from 'react'
 import styles from './header.module.scss'
 import Container from '../ui/Container/Container'
 import NavButton from '../ui/NavButton/NavButton'
@@ -6,28 +6,18 @@ import NavLink from '../ui/NavLink/NavLink'
 import LOGO from '../../assets/images/icons/logo.svg'
 import ArrowDown from '../../assets/images/vectors/arrowDown.svg'
 import { Outlet, Link } from 'react-router-dom'
+import { useStrikyHeader } from '../../hooks/useStrikyHeader'
 
 const Header = () => {
-    const [isActive, setIsActive] = useState(false)
+    const headerClassName = useStrikyHeader()
 
-    const handleHeader = useCallback(() => {
-        const scrollY = window.scrollY ?? 0
-        setIsActive(scrollY > 74)
-        console.log('scroll')
-    }, [])
-
-    useEffect(() => {
-        handleHeader()
-
-        window.addEventListener('scroll', handleHeader)
-        return () => {
-            window.removeEventListener('scroll', handleHeader)
-        }
-    }, [handleHeader])
-
-    const headerClassName = [styles.header, isActive ? styles.active : ''].join(
-        ' '
-    )
+    const scrollSmooth = () => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+        })
+    }
 
     return (
         <>
@@ -35,12 +25,12 @@ const Header = () => {
                 <Container>
                     <nav className={styles.nav}>
                         <div className="item">
-                            <Link to="/">
+                            <Link to="/" onClick={() => scrollSmooth()}>
                                 <img
                                     src={LOGO}
+                                    className={styles.logo}
                                     alt="logo"
-                                    width="74px"
-                                    height="74px"
+                                    title="Pod of Cast"
                                 />
                             </Link>
                         </div>

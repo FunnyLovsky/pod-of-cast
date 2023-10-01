@@ -3,7 +3,8 @@
 .recom {
     width: 100%;
     background: $color_light_blue;
-    padding-top: 140px;
+    padding: 140px 0 100px;
+    overflow: hidden;
 }
 
 .title {
@@ -30,7 +31,7 @@
 
     width: 100%;
     height: auto;
-    overflow: hidden;
+    transition: 0.5s;
     margin: 100px 0 0 0;
 }
 
@@ -63,4 +64,33 @@
     width: 490px;
     font-weight: 500;
     line-height: 160%; /* 36.24px */
+}
+
+.arrows {
+    margin-top: 60px;
+    height: 48px;
+
+    & button {
+        background: none;
+        border: none;
+        outline: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        & svg {
+            width: 48px;
+            height: 48px;
+        }
+    }
+}
+
+.arrowRight:hover {
+    fill: red;
+    stroke: red;
+}
+
+.arrowRight {
+    transform: rotate(180deg);
 }
