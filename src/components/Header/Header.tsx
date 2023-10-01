@@ -8,27 +8,30 @@ import ArrowDown from '../../assets/images/vectors/arrowDown.svg'
 import { Outlet, Link } from 'react-router-dom'
 
 const Header = () => {
-    const [array, setArray] = useState([styles.header])
+    const [isActive, setIsActive] = useState(false)
 
     const handleHeader = useCallback(() => {
         const scrollY = window.scrollY ?? 0
-        if (scrollY > 74) {
-            setArray((prevArray) => [...prevArray, styles.active])
-        } else {
-            setArray((prevArray) => [...prevArray.slice(0, 1)])
-        }
+        setIsActive(scrollY > 74)
+        console.log('scroll')
     }, [])
 
     useEffect(() => {
+        handleHeader()
+
         window.addEventListener('scroll', handleHeader)
         return () => {
             window.removeEventListener('scroll', handleHeader)
         }
     }, [handleHeader])
 
+    const headerClassName = [styles.header, isActive ? styles.active : ''].join(
+        ' '
+    )
+
     return (
         <>
-            <header className={[...array].join(' ')}>
+            <header className={headerClassName}>
                 <Container>
                     <nav className={styles.nav}>
                         <div className="item">
