@@ -7,6 +7,20 @@
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+
+    & button {
+        margin-top: 60px;
+        padding: 24px 48px;
+        border-radius: 8px;
+        background: $color_black;
+        color: #fff;
+        box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.25);
+        @extend %size_caption;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        @extend %transition;
+    }
 }
 
 .item {

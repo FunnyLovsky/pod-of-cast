@@ -1,0 +1,27 @@
+@import '../../../assets/styles/variables.scss';
+
+.title {
+    text-align: center;
+    font-size: 59.3px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 71.16px */
+    letter-spacing: -1.186px;
+    position: relative;
+
+    & img {
+        position: absolute;
+        left: 140px;
+        top: -70px;
+    }
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 22.65px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    color: $color_grey;
+    margin-top: 20px;
+}

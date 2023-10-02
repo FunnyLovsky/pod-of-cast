@@ -3,6 +3,8 @@ import React, { useEffect } from 'react'
 import Intro from '../layout/Intro/Intro'
 import About from '../layout/About/About'
 import Recom from '../layout/Recom/Recom'
+import Features from '../layout/Features/Features'
+import Episodes from '../layout/Episodes/Episodes'
 
 const Main = () => {
     useEffect(() => {
@@ -14,6 +16,8 @@ const Main = () => {
             <Intro />
             <About />
             <Recom />
+            <Features />
+            <Episodes />
         </>
     )
 }

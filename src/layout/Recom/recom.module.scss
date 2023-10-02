@@ -7,6 +7,15 @@
     overflow: hidden;
 }
 
+.decor {
+    position: absolute;
+    left: 140px;
+    top: -70px;
+}
+.cont {
+    width: 100%;
+    position: relative;
+}
 .title {
     text-align: center;
     font-size: 59.3px;
@@ -14,6 +23,7 @@
     font-weight: 700;
     line-height: 120%; /* 71.16px */
     letter-spacing: -1.186px;
+    position: relative;
 }
 
 .subtitle {

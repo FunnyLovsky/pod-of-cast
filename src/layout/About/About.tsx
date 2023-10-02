@@ -1,16 +1,17 @@
 import React from 'react'
-import SCRIBBLE from '../../assets/images/vectors/scribble.svg'
+
 import styles from './about.module.scss'
 import Container from '../../components/ui/Container/Container'
 import ILLUST_1 from '../../assets/images/vectors/illust_1.svg'
 import ILLUST_2 from '../../assets/images/vectors/illust_2.svg'
 import Quote from '../../components/Quote/Quote'
+import Scribble from '../../components/ui/Scribble/Scribe'
 
 const About = () => {
     return (
         <div className={styles.about}>
             <Container>
-                <img src={SCRIBBLE} alt="scribble" className={styles.scribe} />
+                <Scribble type="orange" />
                 <h1 className={styles.title}>
                     Talk. Listen. Get inspired by every minute of it.
                 </h1>

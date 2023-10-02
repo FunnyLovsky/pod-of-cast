@@ -1,0 +1,44 @@
+import React, { FC } from 'react'
+import Container from '../../components/ui/Container/Container'
+import styles from './features.module.scss'
+import Title from '../../components/ui/Title/Title'
+import Scribble from '../../components/ui/Scribble/Scribe'
+import Button from '../../components/ui/Button/Button'
+import { item } from './data/features'
+import SCRIBBLE from '../../assets/images/vectors/scribble_1.svg'
+
+const Features: FC = () => {
+    return (
+        <div className={styles.features}>
+            <Scribble type="black" />
+
+            <Container>
+                <Title
+                    title="Membership benefits"
+                    subtitle="Become our sponsor and get all benefits"
+                />
+                <img
+                    src={SCRIBBLE}
+                    alt="scribble"
+                    className={styles.scribble}
+                />
+                <div className={styles.inner}>
+                    {item.map((elem, index) => (
+                        <div className={styles.item} key={index}>
+                            <img src={elem.icon} alt="s" />
+                            <h3>{elem.title}</h3>
+                            <h5>
+                                Lorem ipsum dolor sit amet consectet pis cing
+                                elit, sed do eiusmod tempor.
+                            </h5>
+                        </div>
+                    ))}
+                </div>
+
+                <Button>SEE PRICING</Button>
+            </Container>
+        </div>
+    )
+}
+
+export default Features

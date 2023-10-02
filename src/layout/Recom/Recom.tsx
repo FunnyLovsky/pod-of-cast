@@ -7,6 +7,9 @@ import AVATAR_2 from '../../assets/images/photos/avatar_3.png'
 import AVATAR_3 from '../../assets/images/photos/avatar_4.png'
 import ICON from '../../assets/images/icons/spotife_icon.svg'
 import ARROW from '../../assets/images/vectors/arrow_circle.svg'
+import Scribble from '../../components/ui/Scribble/Scribe'
+import SPARCKLE from '../../assets/images/vectors/sparkle.svg'
+import Title from '../../components/ui/Title/Title'
 
 const Recom = () => {
     const [item] = useState([
@@ -54,44 +57,49 @@ const Recom = () => {
     }
 
     return (
-        <div className={styles.recom}>
-            <Container>
-                <h1 className={styles.title}>What our listeners say</h1>
-                <h4 className={styles.subtitle}>
-                    Their experience throughout every platform
-                </h4>
-                <div className={styles.slider} ref={sliderRef}>
-                    {item.map((elem) => (
-                        <div key={elem.id} className={styles.item}>
-                            <div className={styles.elem}>“</div>
-                            <div className={styles.text}>
-                                Lorem ipsum dolor sit amet consectet piscing
-                                elit, sed do eiusmod tempor incidi ut labore et
-                                dolore magna aliqua.
+        <div className={styles.cont}>
+            <div className={styles.recom}>
+                <Scribble type="black" />
+                <Container>
+                    <img src={SPARCKLE} alt="" className={styles.decor} />
+                    <Title
+                        title="What our listeners say"
+                        subtitle="Their experience throughout every platform"
+                    />
+
+                    <div className={styles.slider} ref={sliderRef}>
+                        {item.map((elem) => (
+                            <div key={elem.id} className={styles.item}>
+                                <div className={styles.elem}>“</div>
+                                <div className={styles.text}>
+                                    Lorem ipsum dolor sit amet consectet piscing
+                                    elit, sed do eiusmod tempor incidi ut labore
+                                    et dolore magna aliqua.
+                                </div>
+                                <UserPlatform
+                                    avatar={elem.avatar}
+                                    name={elem.name}
+                                    icon={elem.icon}
+                                    text={elem.text}
+                                    aling="left"
+                                />
                             </div>
-                            <UserPlatform
-                                avatar={elem.avatar}
-                                name={elem.name}
-                                icon={elem.icon}
-                                text={elem.text}
-                                aling="left"
-                            />
-                        </div>
-                    ))}
-                </div>
-                <div className={styles.arrows}>
-                    <button onClick={() => slideLeft()}>
-                        <svg className={styles.arrowLeft}>
-                            <use href={`${ARROW}#arrow`} />
-                        </svg>
-                    </button>
-                    <button onClick={() => slideRight()}>
-                        <svg className={styles.arrowRight}>
-                            <use href={`${ARROW}#arrow`} />
-                        </svg>
-                    </button>
-                </div>
-            </Container>
+                        ))}
+                    </div>
+                    <div className={styles.arrows}>
+                        <button onClick={() => slideLeft()}>
+                            <svg className={styles.arrowLeft}>
+                                <use href={`${ARROW}#arrow`} />
+                            </svg>
+                        </button>
+                        <button onClick={() => slideRight()}>
+                            <svg className={styles.arrowRight}>
+                                <use href={`${ARROW}#arrow`} />
+                            </svg>
+                        </button>
+                    </div>
+                </Container>
+            </div>
         </div>
     )
 }

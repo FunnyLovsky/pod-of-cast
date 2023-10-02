@@ -1,0 +1,44 @@
+.features {
+    padding: 140px 0 160px;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.scribble {
+    top: -170px;
+
+    right: 120px;
+    position: absolute;
+}
+
+.inner {
+    padding: 20px 0 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 32%;
+    text-align: center;
+    margin-top: 80px;
+
+    & h3 {
+        font-size: 22.65px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 31.71px */
+        letter-spacing: -0.453px;
+        margin: 30px 0 10px;
+    }
+
+    & h5 {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%; /* 25.6px */
+    }
+}

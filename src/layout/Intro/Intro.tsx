@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './intro.module.scss'
 import Container from '../../components/ui/Container/Container'
-import Button from '../../components/ui/Button/Button'
 import VECTOR_1 from '../../assets/images/vectors/vector_4.svg'
 import VECTOR_2 from '../../assets/images/vectors/vector_2.svg'
 import Cover from '../../components/Cover/Cover'
@@ -21,7 +20,7 @@ const Intro = () => {
                             We cover all kinds of categories and a weekly
                             special guest.
                         </h4>
-                        <Button>Subscribe</Button>
+                        <button>Subscribe</button>
                     </div>
                     <img src={VECTOR_1} alt="" className={styles.vector} />
                     <img src={VECTOR_2} alt="" className={styles.vector_2} />
