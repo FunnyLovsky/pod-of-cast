@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
     entry: path.resolve(__dirname, '..', './src/index.tsx'),
@@ -47,5 +48,26 @@ module.exports = {
             template: path.resolve(__dirname, '..', './public/index.html'),
         }),
         new CleanWebpackPlugin(),
+        new FaviconsWebpackPlugin({
+            logo: path.resolve(__dirname, '..', 'public', 'favicon.svg'),
+            prefix: '/favicons/',
+            outputPath: path.resolve(__dirname, '..', 'build', 'favicons'),
+            mode: 'webapp',
+            inject: (htmlPlugin) =>
+                path.basename(htmlPlugin.options.filename) === 'index.html',
+            favicons: {
+                icons: {
+                    appleIcon: false,
+                    appleStartup: false,
+                    android: false,
+                    favicons: true,
+                    coast: false,
+                    firefox: false,
+                    windows: false,
+                    yandex: false,
+                },
+            },
+            cache: false, // Disallow caching the assets across webpack builds.
+        }),
     ],
 }

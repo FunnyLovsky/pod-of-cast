@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/FunnyLovsky/pod-of-cast">
-    <img src="./src/assets/images/icons/logo.svg" alt="Logo" width="80" height="80">
+    <img src="./public/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Pod of Cast</h3>
