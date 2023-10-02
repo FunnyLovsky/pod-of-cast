@@ -5,6 +5,7 @@ import About from '../layout/About/About'
 import Recom from '../layout/Recom/Recom'
 import Features from '../layout/Features/Features'
 import Episodes from '../layout/Episodes/Episodes'
+import Pricing from '../layout/Pricing/Pricing'
 
 const Main = () => {
     useEffect(() => {
@@ -18,6 +19,7 @@ const Main = () => {
             <Recom />
             <Features />
             <Episodes />
+            <Pricing />
         </>
     )
 }
