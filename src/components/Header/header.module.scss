@@ -30,17 +30,77 @@
     animation: header 0.8s;
 }
 
-.link {
+.head_link {
+    margin-right: 0;
     @extend %size_body;
-
+    display: inline;
     font-weight: 700;
     text-decoration: none;
     color: $color_black;
-    margin-right: 60px;
     position: relative;
     transition: 0.3s;
 
-    &::after {
+    & img {
+        transition: 0.3s;
+        position: absolute;
+        right: -20px;
+        top: 2px;
+    }
+
+    &:hover {
+        color: $color_orange;
+        cursor: pointer;
+    }
+}
+
+.dropdown {
+    display: inline;
+    position: relative;
+
+    &:hover .drop_menu {
+        display: block;
+        opacity: 1;
+    }
+
+    &:hover .head_link {
+        color: $color_orange;
+        cursor: pointer;
+    }
+
+    &:hover .head_link > img {
+        transform: rotate(180deg);
+    }
+}
+
+.drop_menu {
+    transition: 0.3s;
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+    opacity: 0;
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
+    border: 2px solid $color_grey;
+
+    & a {
+        display: inline-block;
+        font-weight: 700;
+        text-decoration: none;
+
+        @extend %size_body;
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    & a:last-child {
+        margin-bottom: 0;
+    }
+
+    & a::after {
         content: '';
         position: absolute;
         bottom: -5px;
@@ -53,11 +113,11 @@
         transition: 0.3s;
     }
 
-    &:hover::after {
+    & a:hover::after {
         width: 100%;
     }
 
-    &:hover {
+    & a:hover {
         color: $color_orange;
     }
 }

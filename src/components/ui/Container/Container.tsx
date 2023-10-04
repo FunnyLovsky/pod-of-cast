@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './container.module.scss'
 
 interface Props {
-    children: string | JSX.Element | JSX.Element[]
+    children: React.ReactNode
 }
 
 const Container = ({ children }: Props) => {

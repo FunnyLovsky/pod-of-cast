@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './header.module.scss'
+import './style.scss'
 import Container from '../ui/Container/Container'
 import LOGO from '../../assets/images/icons/logo.svg'
 import ArrowDown from '../../assets/images/vectors/arrowDown.svg'
@@ -33,16 +34,35 @@ const Header = () => {
                             </Link>
                         </div>
                         <div className="item">
-                            <NavLink to="/episode" className={styles.link}>
+                            <NavLink to="/episode" className="link">
                                 Episode
                             </NavLink>
-                            <Link to="/about" className={styles.link}>
+                            <NavLink to="/about" className="link">
                                 About
-                            </Link>
-                            <Link to="/more" className={styles.link}>
-                                <span>More</span>
-                                <img src={ArrowDown} alt="arrow" />
-                            </Link>
+                            </NavLink>
+                            <div className={styles.dropdown}>
+                                <div className={styles.head_link}>
+                                    <span>More</span>
+                                    <img src={ArrowDown} alt="arrow" />
+                                </div>
+                                <div className={styles.drop_menu}>
+                                    <NavLink to="/blog" className="link">
+                                        Blog
+                                    </NavLink>
+                                    <NavLink to="/features" className="link">
+                                        Features
+                                    </NavLink>
+                                    <NavLink to="/pricing" className="link">
+                                        Pricing
+                                    </NavLink>
+                                    <NavLink
+                                        to="/testimonials"
+                                        className="link"
+                                    >
+                                        Testimonials
+                                    </NavLink>
+                                </div>
+                            </div>
                         </div>
                         <div className="item">
                             <button

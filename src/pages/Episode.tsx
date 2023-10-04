@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
-import Intro from '../layout/Intro/Intro'
+
+import IntroTitle from '../layout/IntroTitle/IntroTitile'
+import Filter from '../layout/Filter/Filter'
 
 const Episode = () => {
     useEffect(() => {
@@ -9,7 +11,8 @@ const Episode = () => {
 
     return (
         <>
-            <Intro />
+            <IntroTitle title="Podcasts of" span="Episodes" long={false} />
+            <Filter type="Episodes" />
         </>
     )
 }
