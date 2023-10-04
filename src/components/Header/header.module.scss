@@ -22,12 +22,73 @@
     z-index: 1000;
 }
 
-.active {
+.activeHeader {
     position: fixed;
     top: 0;
     background: $color_champane;
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
     animation: header 0.8s;
+}
+
+.link {
+    @extend %size_body;
+
+    font-weight: 700;
+    text-decoration: none;
+    color: $color_black;
+    margin-right: 60px;
+    position: relative;
+    transition: 0.3s;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+
+        width: 0px;
+        height: 3px;
+        background: $color_orange;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+
+    &:hover {
+        color: $color_orange;
+    }
+}
+
+.active {
+    color: $color_orange;
+}
+
+.light {
+    background: none;
+    color: black;
+    border: 2px solid $color_black;
+    transition: 0.3s;
+}
+
+.dark {
+    background: black;
+    color: white;
+    transition: 0.3s;
+    box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-left: 20px;
+
+    @extend %transition;
 }
 
 @keyframes header {

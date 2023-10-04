@@ -1,0 +1,22 @@
+@import '../../../assets/styles/variables';
+
+.cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.link {
+    padding: 20px 36px;
+    border-radius: 8px;
+    background: $color_black;
+    color: #fff;
+    box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.25);
+    @extend %size_caption;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto;
+    text-decoration: none;
+
+    @extend %transition;
+}

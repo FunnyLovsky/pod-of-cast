@@ -1,0 +1,13 @@
+@import '../../../assets/styles/variables.scss';
+
+.tag {
+    padding: 6px 12px;
+    border: 1px solid $color_grey;
+    border-radius: 4px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 19.2px */
+    color: $color_grey;
+    margin-right: 6px;
+}

@@ -11,7 +11,7 @@ import VECTOR from '../../assets/images/vectors/vector_3.svg'
 
 const Pricing: FC = () => {
     return (
-        <div className={styles.pricing}>
+        <div className={styles.pricing} id="price">
             <Scribble type="black" />
 
             <Container>

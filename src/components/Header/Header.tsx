@@ -1,11 +1,9 @@
 import React from 'react'
 import styles from './header.module.scss'
 import Container from '../ui/Container/Container'
-import NavButton from '../ui/NavButton/NavButton'
-import NavLink from '../ui/NavLink/NavLink'
 import LOGO from '../../assets/images/icons/logo.svg'
 import ArrowDown from '../../assets/images/vectors/arrowDown.svg'
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link, NavLink } from 'react-router-dom'
 import { useStrikyHeader } from '../../hooks/useStrikyHeader'
 
 const Header = () => {
@@ -35,16 +33,28 @@ const Header = () => {
                             </Link>
                         </div>
                         <div className="item">
-                            <NavLink href="/episode">Episode</NavLink>
-                            <NavLink href="/about">About</NavLink>
-                            <NavLink href="/more">
+                            <NavLink to="/episode" className={styles.link}>
+                                Episode
+                            </NavLink>
+                            <Link to="/about" className={styles.link}>
+                                About
+                            </Link>
+                            <Link to="/more" className={styles.link}>
                                 <span>More</span>
                                 <img src={ArrowDown} alt="arrow" />
-                            </NavLink>
+                            </Link>
                         </div>
                         <div className="item">
-                            <NavButton type="light">Recent Episode</NavButton>
-                            <NavButton type="dark">Subscribe</NavButton>
+                            <button
+                                className={[styles.btn, styles.light].join(' ')}
+                            >
+                                Recent Episode
+                            </button>
+                            <button
+                                className={[styles.btn, styles.dark].join(' ')}
+                            >
+                                Subscribe
+                            </button>
                         </div>
                     </nav>
                 </Container>

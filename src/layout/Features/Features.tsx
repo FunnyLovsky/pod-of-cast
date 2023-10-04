@@ -3,9 +3,10 @@ import Container from '../../components/ui/Container/Container'
 import styles from './features.module.scss'
 import Title from '../../components/ui/Title/Title'
 import Scribble from '../../components/ui/Scribble/Scribe'
-import Button from '../../components/ui/Button/Button'
+
 import { item } from './data/features'
 import SCRIBBLE from '../../assets/images/vectors/scribble_1.svg'
+import Links from '../../components/ui/Links/Links'
 
 const Features: FC = () => {
     return (
@@ -34,8 +35,7 @@ const Features: FC = () => {
                         </div>
                     ))}
                 </div>
-
-                <Button>SEE PRICING</Button>
+                <Links href="/#price">SEE PRICING</Links>
             </Container>
         </div>
     )

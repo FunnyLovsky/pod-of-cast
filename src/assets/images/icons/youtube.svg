@@ -1,8 +1,8 @@
 <svg width="125" height="28" viewBox="0 0 125 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="125" height="28" fill="#E4E6F1"/>
+<rect width="125" height="28" fill="none"/>
 <g id="Landing" clip-path="url(#clip0_1_296)">
 <g id="Header" clip-path="url(#clip1_1_296)">
-<rect width="1440" height="1448" transform="translate(-1100 -1232)" fill="#F7EDE8"/>
+<rect width="1440" height="1448" transform="translate(-1100 -1232)" fill="none"/>
 <g id="platform">
 <g id="platform_2">
 <g id="platform - clickable">

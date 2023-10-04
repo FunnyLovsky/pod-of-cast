@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import styles from './podCastCard.module.scss'
 import AVATAR from '../../assets/images/photos/avatar_5.png'
 import AVATAR_1 from '../../assets/images/photos/avatar_6.png'
+import Tag from '../ui/Tag/Tag'
 
 interface Props {
     id: number
@@ -29,9 +30,7 @@ const PodCastCard = ({ id, href, img, title, tags }: Props) => {
             <div className={styles.tag_inner}>
                 <div className={styles.tags_item}>
                     {tags.map((item, index) => (
-                        <div className={styles.tag} key={index}>
-                            {item}
-                        </div>
+                        <Tag key={index}>{item}</Tag>
                     ))}
                 </div>
                 <div className={styles.hostes_item}>

@@ -1,0 +1,46 @@
+import React, { FC } from 'react'
+import Container from '../../components/ui/Container/Container'
+import styles from './app.module.scss'
+import Title from '../../components/ui/Title/Title'
+import Scribble from '../../components/ui/Scribble/Scribe'
+import PODCAST from '../../assets/images/icons/google_podcast_black.svg'
+import SPOTIFY from '../../assets/images/icons/spotify_black.svg'
+import YOUTUBE from '../../assets/images/icons/youtube_black.svg'
+import Button from '../../components/ui/Button/Button'
+import { Link } from 'react-router-dom'
+
+const App: FC = () => {
+    return (
+        <div className={styles.app}>
+            <Scribble type="orange" />
+            <Container>
+                <div className={styles.cont}>
+                    <div className={styles.special}>BETA</div>
+                    <Title
+                        title="Available now Pod of Cast App"
+                        subtitle="We just launched our podcast app!"
+                    />
+                </div>
+                <div className={styles.inner}>
+                    <Button>DOWNLOAD NOW</Button>
+                    <h3 className={styles.subtitle}>
+                        Content also available on:
+                    </h3>
+                    <div className={styles.icon_inner}>
+                        <Link to="https://podcast.google.com" target="_blank">
+                            <img src={PODCAST} alt="podcast" />
+                        </Link>
+                        <Link to="https://spotify.com" target="_blank">
+                            <img src={SPOTIFY} alt="spotify" />
+                        </Link>
+                        <Link to="https://youtube.com" target="_blank">
+                            <img src={YOUTUBE} alt="youtube" />
+                        </Link>
+                    </div>
+                </div>
+            </Container>
+        </div>
+    )
+}
+
+export default App

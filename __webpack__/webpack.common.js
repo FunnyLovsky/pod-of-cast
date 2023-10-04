@@ -2,11 +2,12 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     entry: path.resolve(__dirname, '..', './src/index.tsx'),
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js', 'scss'],
     },
     module: {
         rules: [
@@ -28,6 +29,7 @@ module.exports = {
                     'sass-loader',
                 ],
             },
+
             {
                 test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
                 type: 'asset/resource',
@@ -68,6 +70,9 @@ module.exports = {
                 },
             },
             cache: false, // Disallow caching the assets across webpack builds.
+        }),
+        new MiniCSSExtractPlugin({
+            filename: '[name]-[contenthash].css',
         }),
     ],
 }

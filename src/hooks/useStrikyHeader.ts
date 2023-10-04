@@ -18,5 +18,5 @@ export function useStrikyHeader(): string {
         }
     }, [strikyHeader])
 
-    return [styles.header, isActive ? styles.active : ''].join(' ')
+    return [styles.header, isActive ? styles.activeHeader : ''].join(' ')
 }
