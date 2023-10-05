@@ -1,0 +1,64 @@
+@import '../../assets/styles/variables.scss';
+
+.filter {
+    width: 100%;
+    padding: 178px 0 120px;
+    position: relative;
+}
+
+.title {
+    text-align: center;
+    font-size: 59.3px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 71.16px */
+    letter-spacing: -1.186px;
+}
+
+.categories {
+    margin-top: 108px;
+}
+
+.inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    & button {
+        color: $color_grey;
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 22.65px;
+        font-style: normal;
+        font-weight: 500;
+
+        transition: 0.3s;
+
+        &:hover {
+            font-weight: 700;
+            /* 31.71px */
+            color: $color_orange;
+        }
+    }
+}
+
+.stroke {
+    width: 100%;
+    height: 1.5px;
+    background: $color_grey;
+    margin-top: 30px;
+}
+
+.episodes {
+    padding: 40px;
+    background: red;
+}
+
+.post_inner {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}

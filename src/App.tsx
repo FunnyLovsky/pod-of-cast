@@ -7,6 +7,7 @@ import About from './pages/About'
 import Episode from './pages/Episode'
 import Blog from './pages/Blog'
 import NotFound from './layout/NotFound/NotFound'
+import EpisodeItem from './pages/EpisodeItem'
 
 const App = () => {
     return (
@@ -14,14 +15,10 @@ const App = () => {
             <BrowserRouter>
                 <Routes>
                     <Route element={<Header />}>
-                        <Route
-                            path="/"
-                            element={<Main />}
-                            errorElement={<NotFound />}
-                        />
+                        <Route path="/" element={<Main />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/episode" element={<Episode />} />
-                        <Route path="/episode/:id" element={<Blog />} />
+                        <Route path="/episode/:id" element={<EpisodeItem />} />
                         <Route path="/blog" element={<Blog />} />
                         <Route path="/blog/:id" element={<Blog />} />
                     </Route>

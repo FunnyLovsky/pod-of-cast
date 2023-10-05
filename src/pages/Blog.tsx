@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import IntroTitle from '../layout/IntroTitle/IntroTitile'
-import Filter from '../layout/Filter/Filter'
+
+import FilterPosts from '../layout/FilterPosts/FilterPosts'
+import App from '../layout/App/App'
+import Footer from '../layout/Footer/Footer'
 
 const Blog = () => {
     useEffect(() => {
@@ -10,7 +13,9 @@ const Blog = () => {
     return (
         <>
             <IntroTitle title="Article and" span="News" long={false} />
-            <Filter type="Posts" />
+            <FilterPosts />
+            <App />
+            <Footer />
         </>
     )
 }
