@@ -1,11 +1,12 @@
-import IMG_1 from '../../../assets/images/photos/cover_1.png'
-import IMG_2 from '../../../assets/images/photos/cover_6.png'
-import IMG_3 from '../../../assets/images/photos/cover_5.png'
-import IMG_4 from '../../../assets/images/photos/cover_3.png'
-import IMG_5 from '../../../assets/images/photos/cover_4.png'
-import IMG_6 from '../../../assets/images/photos/cover_2.png'
+import IMG_1 from '../assets/images/photos/cover_1.png'
+import IMG_2 from '../assets/images/photos/cover_6.png'
+import IMG_3 from '../assets/images/photos/cover_5.png'
+import IMG_4 from '../assets/images/photos/cover_3.png'
+import IMG_5 from '../assets/images/photos/cover_4.png'
+import IMG_6 from '../assets/images/photos/cover_2.png'
+import { Episodes } from '../types/types'
 
-export const items = [
+export const episodes: Episodes[] = [
     {
         id: 1,
         href: '/episode',

@@ -2,13 +2,13 @@ import React from 'react'
 import styles from './filterEpisode.module.scss'
 import Container from '../../components/ui/Container/Container'
 import Search from '../../components/ui/Search/Search'
-import { items } from '../../components/PodCastCard/data/episodes'
-import PodCastCard from '../../components/PodCastCard/PodCastCard'
+import { episodes } from '../../data/episodes'
+import EpisodeCard from '../../components/EpisodeCard/EpisodeCard'
 
 const FilterEpisode = () => {
     return (
         <div className={styles.filter}>
-            <Search />
+            <Search array={episodes} />
             <Container>
                 <h1 className={styles.title}>Latest Episodes</h1>
                 <div className={styles.categories}>
@@ -24,8 +24,8 @@ const FilterEpisode = () => {
                     <div className={styles.stroke}></div>
                 </div>
                 <div className={styles.post_inner}>
-                    {items.map((elem, index) => (
-                        <PodCastCard
+                    {episodes.map((elem, index) => (
+                        <EpisodeCard
                             key={index}
                             id={elem.id}
                             href={elem.href}

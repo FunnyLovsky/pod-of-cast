@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from './notFound.module.scss'
 import { Link } from 'react-router-dom'
 
 const NotFound = () => {
-    useEffect(() => {
-        document.title = '404 - Pod of Cast'
-    }, [])
-
     return (
         <div className={styles.error}>
             <div className={styles.item}>

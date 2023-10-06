@@ -8,7 +8,7 @@ import Button from '../../components/ui/Button/Button'
 import VECTOR from '../../assets/images/vectors/vector_5.svg'
 import SCRIBBLE from '../../assets/images/vectors/scribble_1.svg'
 import BlogCard from '../../components/BlogCard/BlogCard'
-import { blogs } from '../../components/BlogCard/data/blogs'
+import { blogs } from '../../data/blogs'
 
 const Blog: FC = () => {
     const arrayBlog = blogs.slice(0, 2)
@@ -36,6 +36,7 @@ const Blog: FC = () => {
                             tags={blog.tags}
                             date={blog.date}
                             href={blog.href}
+                            id={blog.id}
                         />
                     ))}
                 </div>

@@ -6,8 +6,8 @@ import Header from './components/Header/Header'
 import About from './pages/About'
 import Episode from './pages/Episode'
 import Blog from './pages/Blog'
-import NotFound from './layout/NotFound/NotFound'
 import EpisodeItem from './pages/EpisodeItem'
+import Error from './pages/Error'
 
 const App = () => {
     return (
@@ -22,7 +22,7 @@ const App = () => {
                         <Route path="/blog" element={<Blog />} />
                         <Route path="/blog/:id" element={<Blog />} />
                     </Route>
-                    <Route path="*" element={<NotFound />} />
+                    <Route path="*" element={<Error />} />
                 </Routes>
             </BrowserRouter>
         </>

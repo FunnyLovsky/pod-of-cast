@@ -3,7 +3,7 @@ import styles from './introElement.module.scss'
 import Container from '../../components/ui/Container/Container'
 import VECTOR_1 from '../../assets/images/vectors/vector_4.svg'
 import VECTOR_2 from '../../assets/images/vectors/vector_2.svg'
-import { items } from '../../components/PodCastCard/data/episodes'
+import { episodes } from '../../data/episodes'
 import AVATAR from '../../assets/images/photos/avatar_5.png'
 import Tag from '../../components/ui/Tag/Tag'
 
@@ -17,17 +17,19 @@ const IntroElement = ({ id }: Props) => {
             <div className={styles.intro}>
                 <Container>
                     <div className={styles.inner}>
-                        <img src={items[id].img} alt="" />
+                        <img src={episodes[id].img} alt="" />
                         <div className={styles.info}>
                             <div className={styles.details}>
                                 <h3 className={styles.number_episode}>
-                                    Episode {items[id].id}
+                                    Episode {episodes[id].id}
                                 </h3>
                                 <h3 className={styles.features}>
                                     FEATURED EPISODE
                                 </h3>
                             </div>
-                            <h1 className={styles.title}>{items[id].title}</h1>
+                            <h1 className={styles.title}>
+                                {episodes[id].title}
+                            </h1>
                             <div className={styles.stroke}></div>
                             <h2 className={styles.subtitle}>
                                 Lorem ipsum dolor sit amet, consectetur
@@ -60,7 +62,7 @@ const IntroElement = ({ id }: Props) => {
                     </div>
                     <div className={styles.tags}>
                         <h3>Tags:</h3>
-                        {items[id].tags.map((tag, index) => (
+                        {episodes[id].tags.map((tag, index) => (
                             <Tag key={index}>{tag}</Tag>
                         ))}
                     </div>

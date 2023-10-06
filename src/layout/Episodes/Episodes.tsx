@@ -5,9 +5,9 @@ import Title from '../../components/ui/Title/Title'
 import Scribble from '../../components/ui/Scribble/Scribe'
 import Button from '../../components/ui/Button/Button'
 import SPARKLE from '../../assets/images/vectors/sparkle_1.svg'
-import { items } from '../../components/PodCastCard/data/episodes'
+import { episodes } from '../../data/episodes'
 import { Link } from 'react-router-dom'
-import PodCastCard from '../../components/PodCastCard/PodCastCard'
+import EpisodeCard from '../../components/EpisodeCard/EpisodeCard'
 
 const Episodes: FC = () => {
     return (
@@ -22,8 +22,8 @@ const Episodes: FC = () => {
                 <img src={SPARKLE} alt="scribble" className={styles.sparkie} />
 
                 <div className={styles.inner}>
-                    {items.map((elem, index) => (
-                        <PodCastCard
+                    {episodes.map((elem, index) => (
+                        <EpisodeCard
                             key={index}
                             id={elem.id}
                             href={elem.href}

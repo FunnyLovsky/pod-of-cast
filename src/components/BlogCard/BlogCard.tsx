@@ -1,21 +1,13 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styles from './blogCard.module.scss'
 
 import { Link } from 'react-router-dom'
 import Tag from '../ui/Tag/Tag'
+import { Blogs } from '../../types/types'
 
-interface Props {
-    img: string
-    name: string
-    title: string
-    tags: string[]
-    date: string
-    href: number
-}
-
-const BlogCard: FC<Props> = ({ img, name, title, tags, date, href }: Props) => {
+const BlogCard = ({ img, name, title, tags, date, href, id }: Blogs) => {
     return (
-        <Link to={`/blog/${href}`} className={styles.item}>
+        <Link to={`${href}/${id}`} className={styles.item}>
             <img src={img} alt="img" />
             <h3 className={styles.name}>{name}</h3>
             <h1 className={styles.title}>{title}</h1>

@@ -3,13 +3,14 @@ import App from '../layout/App/App'
 import Footer from '../layout/Footer/Footer'
 import Episodes from '../layout/Episodes/Episodes'
 import IntroElement from '../layout/IntroElement/IntroElement'
-import { items } from '../components/PodCastCard/data/episodes'
+import { episodes } from '../data/episodes'
 import { useParams } from 'react-router-dom'
+import NotFound from '../layout/NotFound/NotFound'
 
 const EpisodeItem = () => {
     const { id } = useParams()
     const num = Number(id) - 1
-    const title = items[num] ? items[num].title : 'Not Found'
+    const title = episodes[num] ? episodes[num].title : 'Not Found'
 
     useEffect(() => {
         document.title = `${title} - Pod of Cast`
@@ -18,7 +19,7 @@ const EpisodeItem = () => {
 
     return (
         <>
-            {items[num] ? (
+            {episodes[num] ? (
                 <>
                     <IntroElement id={num} />
                     <Episodes />
@@ -26,7 +27,7 @@ const EpisodeItem = () => {
                     <Footer />
                 </>
             ) : (
-                <Footer />
+                <NotFound />
             )}
         </>
     )

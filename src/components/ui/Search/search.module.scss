@@ -1,10 +1,11 @@
-@import '../../../assets/styles/style.scss';
+@import '../../../assets/styles/variables.scss';
 
 .inner {
     position: absolute;
     top: -37px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 100;
 }
 
 .input {
@@ -38,5 +39,42 @@
     & input:focus {
         border: 1.5px solid none;
         outline: 3px solid $color_orange;
+    }
+}
+
+.result_search {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    height: auto;
+    background: $color_champane;
+    border-radius: 12px;
+    padding: 15px 0;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 8px 0 8px 40px;
+
+    transition: 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        background: darken($color: $color_champane, $amount: 5);
+    }
+
+    & img {
+        margin-right: 24px;
+    }
+
+    & h3 {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%;
+        color: $color_grey;
     }
 }

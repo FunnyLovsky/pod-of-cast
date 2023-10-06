@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 
 import IntroTitle from '../layout/IntroTitle/IntroTitile'
+import Footer from '../layout/Footer/Footer'
+import App from '../layout/App/App'
 
 const About = () => {
     useEffect(() => {
@@ -11,6 +13,8 @@ const About = () => {
     return (
         <>
             <IntroTitle title="About" span=" Pod of Cast" long={true} />
+            <App />
+            <Footer />
         </>
     )
 }

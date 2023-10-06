@@ -1,18 +1,11 @@
 import { Link } from 'react-router-dom'
-import styles from './podCastCard.module.scss'
+import styles from './episodeCard.module.scss'
 import AVATAR from '../../assets/images/photos/avatar_5.png'
 import AVATAR_1 from '../../assets/images/photos/avatar_6.png'
 import Tag from '../ui/Tag/Tag'
+import { Episodes } from '../../types/types'
 
-interface Props {
-    id: number
-    href: string
-    img: string
-    title: string
-    tags: string[]
-}
-
-const PodCastCard = ({ id, href, img, title, tags }: Props) => {
+const EpisodeCard = ({ id, href, img, title, tags }: Episodes) => {
     return (
         <Link className={styles.card} to={`${href}/${id}`}>
             <div className={styles.cover}>
@@ -47,4 +40,4 @@ const PodCastCard = ({ id, href, img, title, tags }: Props) => {
     )
 }
 
-export default PodCastCard
+export default EpisodeCard

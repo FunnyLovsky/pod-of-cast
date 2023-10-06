@@ -2,13 +2,13 @@ import React from 'react'
 import styles from './filterPosts.module.scss'
 import Container from '../../components/ui/Container/Container'
 import Search from '../../components/ui/Search/Search'
-import { blogs } from '../../components/BlogCard/data/blogs'
+import { blogs } from '../../data/blogs'
 import BlogCard from '../../components/BlogCard/BlogCard'
 
 const FilterPosts = () => {
     return (
         <div className={styles.filter}>
-            <Search />
+            <Search array={blogs} />
             <Container>
                 <h1 className={styles.title}>Latest Posts</h1>
                 <div className={styles.categories}>
@@ -32,6 +32,7 @@ const FilterPosts = () => {
                             tags={elem.tags}
                             date={elem.date}
                             href={elem.href}
+                            id={elem.id}
                         />
                     ))}
                 </div>

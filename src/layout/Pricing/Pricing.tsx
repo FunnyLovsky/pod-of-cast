@@ -3,7 +3,7 @@ import Container from '../../components/ui/Container/Container'
 import styles from './pricing.module.scss'
 import Title from '../../components/ui/Title/Title'
 import Scribble from '../../components/ui/Scribble/Scribe'
-import { items } from './data/pricing'
+import { pricing } from '../../data/pricing'
 import STAR from '../../assets/images/vectors/star.svg'
 import Button from '../../components/ui/Button/Button'
 import SPARKLE from '../../assets/images/vectors/sparkle_1.svg'
@@ -23,7 +23,7 @@ const Pricing: FC = () => {
 
                 <div className={styles.inner}>
                     <img src={STAR} alt="star" className={styles.star} />
-                    {items.map((elem, index) => (
+                    {pricing.map((elem, index) => (
                         <div className={styles.item} key={index}>
                             <div className={styles.price} style={elem.style}>
                                 <h1 className={styles.title}>
