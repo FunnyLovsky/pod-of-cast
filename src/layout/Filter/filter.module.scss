@@ -23,26 +23,24 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-
-    & button {
-        color: $color_grey;
-        background: none;
-        border: none;
-        outline: none;
-        font-size: 22.65px;
-        font-style: normal;
-        font-weight: 500;
-
-        transition: 0.3s;
-
-        &:hover {
-            font-weight: 700;
-            /* 31.71px */
-            color: $color_orange;
-        }
-    }
 }
 
+button {
+    color: $color_grey;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 22.65px;
+    font-style: normal;
+    font-weight: 500;
+
+    transition: 0.3s;
+
+    &:hover {
+        color: $color_orange;
+        cursor: pointer;
+    }
+}
 .stroke {
     width: 100%;
     height: 1.5px;
@@ -61,4 +59,27 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 100px;
+}
+
+.active {
+    color: $color_orange;
+    font-weight: 700;
+}
+
+.not_found {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+
+    & img {
+        width: 150px;
+        height: 150px;
+        margin-right: 50px;
+    }
+
+    & h1 {
+        font-size: 59.3px;
+    }
 }

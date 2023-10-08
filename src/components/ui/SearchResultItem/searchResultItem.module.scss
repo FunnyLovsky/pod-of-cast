@@ -1,0 +1,28 @@
+@import '../../../assets/styles/variables.scss';
+
+.item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 8px 0 8px 40px;
+
+    transition: 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        background: darken($color: $color_champane, $amount: 5);
+    }
+
+    & img {
+        margin-right: 24px;
+    }
+
+    & h3 {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%;
+        color: $color_grey;
+    }
+}

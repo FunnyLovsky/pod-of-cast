@@ -1,25 +1,26 @@
 import React from 'react'
-import styles from './filterPosts.module.scss'
+import styles from './filter.module.scss'
 import Container from '../../components/ui/Container/Container'
 import Search from '../../components/Search/Search'
-import { blogs, blogsCategory } from '../../data/blogs'
-import BlogCard from '../../components/BlogCard/BlogCard'
-import { useFilter } from '../../hooks/useFilter'
+import EpisodeCard from '../../components/EpisodeCard/EpisodeCard'
 import NOT_FOUND from '../../assets/images/icons/not_found.png'
+import { useFilter } from '../../hooks/useFilter'
+import { episodeCategory, episodes } from '../../data/episodes'
 
-const FilterPosts = () => {
+const Filter = () => {
     const { activeCategory, filterItems, filterArray } = useFilter(
-        blogs,
-        blogsCategory
+        episodes,
+        episodeCategory
     )
+
     return (
         <div className={styles.filter}>
-            <Search array={blogs} />
+            <Search array={episodes} />
             <Container>
-                <h1 className={styles.title}>Latest Posts</h1>
+                <h1 className={styles.title}>Latest Episodes</h1>
                 <div className={styles.categories}>
                     <div className={styles.inner}>
-                        {blogsCategory.map((category, index) => (
+                        {episodeCategory.map((category, index) => (
                             <button
                                 key={index}
                                 onClick={() => filterItems(category)}
@@ -38,21 +39,19 @@ const FilterPosts = () => {
                 <div className={styles.post_inner}>
                     {filterArray.length != 0 ? (
                         filterArray.map((elem, index) => (
-                            <BlogCard
+                            <EpisodeCard
                                 key={index}
+                                id={elem.id}
+                                href={elem.href}
                                 img={elem.img}
-                                name={elem.name}
                                 title={elem.title}
                                 tags={elem.tags}
-                                date={elem.date}
-                                href={elem.href}
-                                id={elem.id}
                             />
                         ))
                     ) : (
                         <div className={styles.not_found}>
                             <img src={NOT_FOUND} alt="not_found" />
-                            <h1>Posts not found</h1>
+                            <h1>Episodes not found</h1>
                         </div>
                     )}
                 </div>
@@ -61,4 +60,4 @@ const FilterPosts = () => {
     )
 }
 
-export default FilterPosts
+export default Filter

@@ -13,6 +13,7 @@ export const episodes: Episodes[] = [
         img: IMG_6,
         title: `Are you a Perplexed Mind Person?`,
         tags: ['mind-behaviour', 'health'],
+        category: 'health',
     },
     {
         id: 2,
@@ -20,6 +21,7 @@ export const episodes: Episodes[] = [
         img: IMG_5,
         title: 'Type of Social Classes of People',
         tags: ['social class', 'wealth'],
+        category: 'business',
     },
     {
         id: 3,
@@ -27,6 +29,7 @@ export const episodes: Episodes[] = [
         img: IMG_4,
         title: 'How to Deal with Self–Confidence',
         tags: ['self-esteem', 'health'],
+        category: 'health',
     },
     {
         id: 4,
@@ -34,6 +37,7 @@ export const episodes: Episodes[] = [
         img: IMG_3,
         title: `Women's Rights? Is it alright?`,
         tags: ['women’s rights'],
+        category: 'education',
     },
     {
         id: 5,
@@ -41,6 +45,7 @@ export const episodes: Episodes[] = [
         img: IMG_2,
         title: 'Tesla Autopilot Controversy',
         tags: ['automation', 'tech'],
+        category: 'tech',
     },
     {
         id: 6,
@@ -48,5 +53,16 @@ export const episodes: Episodes[] = [
         img: IMG_1,
         title: 'Pandemic Becoming Endemic',
         tags: ['covid-19', 'health'],
+        category: 'health',
     },
+]
+
+export const episodeCategory: string[] = [
+    'All',
+    'Business',
+    'Comedy',
+    'Education',
+    'Health',
+    'News',
+    'Tech',
 ]

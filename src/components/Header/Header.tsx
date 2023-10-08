@@ -4,6 +4,7 @@ import './style.scss'
 import Container from '../ui/Container/Container'
 import LOGO from '../../assets/images/icons/logo.svg'
 import ArrowDown from '../../assets/images/vectors/arrowDown.svg'
+import BURGER_MENU from '../../assets/images/icons/burger_menu.svg'
 import { Outlet, Link, NavLink } from 'react-router-dom'
 import { useStrikyHeader } from '../../hooks/useStrikyHeader'
 
@@ -23,7 +24,7 @@ const Header = () => {
             <header className={headerClassName}>
                 <Container>
                     <nav className={styles.nav}>
-                        <div className="item">
+                        <div className={styles.item}>
                             <Link to="/" onClick={() => scrollSmooth()}>
                                 <img
                                     src={LOGO}
@@ -33,7 +34,7 @@ const Header = () => {
                                 />
                             </Link>
                         </div>
-                        <div className="item">
+                        <div className={styles.item}>
                             <NavLink to="/episode" className="link">
                                 Episode
                             </NavLink>
@@ -64,7 +65,7 @@ const Header = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="item">
+                        <div className={styles.item}>
                             <button
                                 className={[styles.btn, styles.light].join(' ')}
                             >
@@ -76,9 +77,36 @@ const Header = () => {
                                 Subscribe
                             </button>
                         </div>
+                        <div className={styles.burger_icon}>
+                            <button>
+                                <img src={BURGER_MENU} alt="" />
+                            </button>
+                        </div>
                     </nav>
                 </Container>
             </header>
+            <div className={styles.burger_menu}>
+                <div className={styles.burger_item}>
+                    <NavLink to="/episode" className="link">
+                        Episode
+                    </NavLink>
+                    <NavLink to="/about" className="link">
+                        About
+                    </NavLink>
+                    <NavLink to="/blog" className="link">
+                        Blog
+                    </NavLink>
+                    <NavLink to="/features" className="link">
+                        Features
+                    </NavLink>
+                    <NavLink to="/pricing" className="link">
+                        Pricing
+                    </NavLink>
+                    <NavLink to="/testimonials" className="link">
+                        Testimonials
+                    </NavLink>
+                </div>
+            </div>
             <Outlet />
         </>
     )

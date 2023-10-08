@@ -1,8 +1,14 @@
 .container {
-    width: 1160px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1160px;
     height: 100%;
     position: relative;
     margin: 0 auto;
     display: block;
+}
+
+@media screen and (max-width: 1160px) {
+    .container {
+        padding: 0 15px;
+    }
 }

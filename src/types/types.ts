@@ -4,14 +4,16 @@ export interface Episodes {
     img: string
     title: string
     tags: string[]
+    category?: string
 }
 
 export interface Blogs {
     href: string
-    name: string
+    name?: string
     img: string
     title: string
-    date: string
+    date?: string
     tags: string[]
     id: number
+    category?: string
 }

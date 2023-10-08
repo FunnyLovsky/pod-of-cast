@@ -11,6 +11,7 @@ export const blogs: Blogs[] = [
         date: 'Sep 14, 2021',
         href: '/blog',
         id: 1,
+        category: 'business',
     },
     {
         img: IMG_2,
@@ -20,6 +21,7 @@ export const blogs: Blogs[] = [
         date: 'Sep 12, 2021',
         href: '/blog',
         id: 2,
+        category: 'tips & trick',
     },
     {
         img: IMG_2,
@@ -29,6 +31,7 @@ export const blogs: Blogs[] = [
         date: 'Sep 10, 2021',
         href: '/blog',
         id: 3,
+        category: 'news',
     },
     {
         img: IMG_2,
@@ -38,5 +41,15 @@ export const blogs: Blogs[] = [
         date: 'Sep 8, 2021',
         href: '/blog',
         id: 4,
+        category: 'productivity',
     },
+]
+
+export const blogsCategory: string[] = [
+    'All',
+    'Business',
+    'News',
+    'Tips & Trick',
+    'Podcast',
+    'Productivity',
 ]
