@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './introElement.module.scss'
 import Container from '../../components/ui/Container/Container'
 import VECTOR_1 from '../../assets/images/vectors/vector_4.svg'
@@ -7,11 +7,33 @@ import { episodes } from '../../data/episodes'
 import AVATAR from '../../assets/images/photos/avatar_5.png'
 import Tag from '../../components/ui/Tag/Tag'
 
+import SoundPlayer from '../../components/SoundPlayer/SoundPlayer'
+
 interface Props {
     id: number
 }
 
+interface Time {
+    min: number
+    sec: number
+    duration: number
+}
+
 const IntroElement = ({ id }: Props) => {
+    const [player, setPlayer] = useState(false)
+    const [time, setTime] = useState({
+        min: 0,
+        sec: 0,
+    })
+
+    useEffect(() => {
+        setPlayer(false)
+    }, [id])
+
+    const getTimeSound = (fullTime: Time) => {
+        setTime(fullTime)
+    }
+
     return (
         <>
             <div className={styles.intro}>
@@ -56,7 +78,15 @@ const IntroElement = ({ id }: Props) => {
                             </div>
                             <div className={styles.buttons}>
                                 <button>SUBSCRIBE</button>
-                                <button>LISTEN NOW (46 min)</button>
+                                {player ? (
+                                    <button onClick={() => setPlayer(false)}>
+                                        Close
+                                    </button>
+                                ) : (
+                                    <button onClick={() => setPlayer(true)}>
+                                        LISTEN NOW ({time.min}:{time.sec} min)
+                                    </button>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -70,6 +100,13 @@ const IntroElement = ({ id }: Props) => {
                 <img src={VECTOR_1} alt="" className={styles.vector} />
                 <img src={VECTOR_2} alt="" className={styles.vector_2} />
             </div>
+            {player ? (
+                <SoundPlayer
+                    id={id}
+                    episodes={episodes}
+                    getTime={getTimeSound}
+                />
+            ) : null}
         </>
     )
 }

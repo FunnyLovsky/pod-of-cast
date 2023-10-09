@@ -5,6 +5,7 @@ export interface Episodes {
     title: string
     tags: string[]
     category?: string
+    audio: string
 }
 
 export interface Blogs {
