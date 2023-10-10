@@ -106,6 +106,7 @@ const SoundPlayer = ({ id, episodes, getTime, style }: Props) => {
         } else {
             play()
             setIsPlaying(true)
+            sound.seek([])
             console.log(isPlaying)
         }
     }
@@ -141,7 +142,7 @@ const SoundPlayer = ({ id, episodes, getTime, style }: Props) => {
                             value={sound.seek([])}
                             className={styles.timeline}
                             onChange={(e) => {
-                                sound.seek([Number(e.target.value)])
+                                sound.seek([e.target.value])
                                 handleInputBack()
                             }}
                             ref={range}
