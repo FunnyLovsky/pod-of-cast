@@ -49,6 +49,22 @@
         color: #fff;
     }
 }
+
+.btn_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & svg {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+    }
+
+    & h3 {
+        @extend %size_caption;
+    }
+}
 .details {
     display: flex;
     justify-content: space-between;

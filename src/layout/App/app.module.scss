@@ -52,4 +52,14 @@
     & a:last-child {
         margin-right: 0;
     }
+
+    & svg {
+        width: 25px;
+        height: 25px;
+        transition: 0.3s;
+
+        &:hover {
+            color: $color_orange;
+        }
+    }
 }

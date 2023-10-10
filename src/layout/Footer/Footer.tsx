@@ -8,7 +8,9 @@ import SPOTIFY from '../../assets/images/icons/spotify.svg'
 import YOUTUBE from '../../assets/images/icons/youtube.svg'
 import APP_STORE from '../../assets/images/icons/app_store.svg'
 import PLAY_MARKET from '../../assets/images/icons/google_play.svg'
-import SOCIAL_ICONS from '../../assets/images/icons/social_icons_sprite.svg'
+import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
+import { FaInstagram } from '@react-icons/all-files/fa/FaInstagram'
+import { SiTiktok } from '@react-icons/all-files/si/SiTiktok'
 
 const Footer: FC = () => {
     return (
@@ -26,23 +28,13 @@ const Footer: FC = () => {
                         </h3>
                         <div className={styles.icons_inner}>
                             <Link to="https://twitter.com" target="_blank">
-                                <svg className="icons">
-                                    <use
-                                        xlinkHref={`${SOCIAL_ICONS}#twitter`}
-                                    ></use>
-                                </svg>
+                                <FaTwitter />
                             </Link>
                             <Link to="https://instagram.com" target="_blank">
-                                <svg className={styles.icons}>
-                                    <use
-                                        href={`${SOCIAL_ICONS}#instagram`}
-                                    ></use>
-                                </svg>
+                                <FaInstagram />
                             </Link>
                             <Link to="https://tiktok.com" target="_blank">
-                                <svg className={styles.icons}>
-                                    <use href={`${SOCIAL_ICONS}#tiktok`}></use>
-                                </svg>
+                                <SiTiktok />
                             </Link>
                         </div>
                     </div>

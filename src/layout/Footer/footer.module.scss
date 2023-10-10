@@ -53,15 +53,25 @@
 
 .icons_inner {
     display: flex;
+    align-items: flex-end;
 
     & a {
-        width: 24px;
-        height: 24px;
+        //
         margin-right: 25px;
     }
 
     & a:last-child {
         margin-right: 0;
+    }
+
+    & svg {
+        width: 24px;
+        height: 24px;
+        transition: 0.3s;
+
+        &:hover {
+            color: $color_orange;
+        }
     }
 }
 

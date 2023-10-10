@@ -85,13 +85,20 @@
         border: none;
         outline: none;
 
-        &:hover {
-            cursor: pointer;
-        }
-
         & svg {
+            color: $color_black;
             width: 48px;
             height: 48px;
+            transition: 0.3s;
+
+            &:hover {
+                cursor: pointer;
+                color: $color_orange;
+            }
+
+            &:active {
+                transform: scale(0.8);
+            }
         }
     }
 }

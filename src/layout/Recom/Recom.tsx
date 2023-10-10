@@ -6,10 +6,11 @@ import AVATAR_1 from '../../assets/images/photos/avatar_2.png'
 import AVATAR_2 from '../../assets/images/photos/avatar_3.png'
 import AVATAR_3 from '../../assets/images/photos/avatar_4.png'
 import ICON from '../../assets/images/icons/spotife_icon.svg'
-import ARROW from '../../assets/images/vectors/arrow_circle.svg'
 import Scribble from '../../components/ui/Scribble/Scribe'
 import SPARCKLE from '../../assets/images/vectors/sparkle.svg'
 import Title from '../../components/ui/Title/Title'
+import { AiOutlineRightCircle } from '@react-icons/all-files/ai/AiOutlineRightCircle'
+import { AiOutlineLeftCircle } from '@react-icons/all-files/ai/AiOutlineLeftCircle'
 
 const Recom = () => {
     const [item] = useState([
@@ -88,14 +89,10 @@ const Recom = () => {
                     </div>
                     <div className={styles.arrows}>
                         <button onClick={() => slideLeft()}>
-                            <svg className={styles.arrowLeft}>
-                                <use href={`${ARROW}#arrow`} />
-                            </svg>
+                            <AiOutlineLeftCircle />
                         </button>
                         <button onClick={() => slideRight()}>
-                            <svg className={styles.arrowRight}>
-                                <use href={`${ARROW}#arrow`} />
-                            </svg>
+                            <AiOutlineRightCircle />
                         </button>
                     </div>
                 </Container>

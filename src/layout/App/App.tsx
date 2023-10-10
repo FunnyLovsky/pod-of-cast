@@ -3,11 +3,11 @@ import Container from '../../components/ui/Container/Container'
 import styles from './app.module.scss'
 import Title from '../../components/ui/Title/Title'
 import Scribble from '../../components/ui/Scribble/Scribe'
-import PODCAST from '../../assets/images/icons/google_podcast_black.svg'
-import SPOTIFY from '../../assets/images/icons/spotify_black.svg'
-import YOUTUBE from '../../assets/images/icons/youtube_black.svg'
 import Button from '../../components/ui/Button/Button'
 import { Link } from 'react-router-dom'
+import { SiGooglepodcasts } from '@react-icons/all-files/si/SiGooglepodcasts'
+import { FaSpotify } from '@react-icons/all-files/fa/FaSpotify'
+import { FaYoutube } from '@react-icons/all-files/fa/FaYoutube'
 
 const App: FC = () => {
     return (
@@ -28,13 +28,13 @@ const App: FC = () => {
                     </h3>
                     <div className={styles.icon_inner}>
                         <Link to="https://podcast.google.com" target="_blank">
-                            <img src={PODCAST} alt="podcast" />
+                            <SiGooglepodcasts />
                         </Link>
                         <Link to="https://spotify.com" target="_blank">
-                            <img src={SPOTIFY} alt="spotify" />
+                            <FaSpotify />
                         </Link>
                         <Link to="https://youtube.com" target="_blank">
-                            <img src={YOUTUBE} alt="youtube" />
+                            <FaYoutube />
                         </Link>
                     </div>
                 </div>

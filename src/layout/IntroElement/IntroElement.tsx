@@ -6,7 +6,8 @@ import VECTOR_2 from '../../assets/images/vectors/vector_2.svg'
 import { episodes } from '../../data/episodes'
 import AVATAR from '../../assets/images/photos/avatar_5.png'
 import Tag from '../../components/ui/Tag/Tag'
-
+import { FaPlay } from '@react-icons/all-files/fa/FaPlay'
+import { CgClose } from '@react-icons/all-files/cg/CgClose'
 import SoundPlayer from '../../components/SoundPlayer/SoundPlayer'
 
 interface Props {
@@ -15,7 +16,7 @@ interface Props {
 
 interface Time {
     min: number
-    sec: number
+    sec: string
     duration: number
 }
 
@@ -23,7 +24,7 @@ const IntroElement = ({ id }: Props) => {
     const [player, setPlayer] = useState(false)
     const [time, setTime] = useState({
         min: 0,
-        sec: 0,
+        sec: '00',
     })
 
     useEffect(() => {
@@ -80,11 +81,28 @@ const IntroElement = ({ id }: Props) => {
                                 <button>SUBSCRIBE</button>
                                 {player ? (
                                     <button onClick={() => setPlayer(false)}>
-                                        Close
+                                        <div className={styles.btn_inner}>
+                                            <CgClose />
+                                            <h3>Close</h3>
+                                        </div>
                                     </button>
                                 ) : (
                                     <button onClick={() => setPlayer(true)}>
-                                        LISTEN NOW ({time.min}:{time.sec} min)
+                                        <div className={styles.btn_inner}>
+                                            <FaPlay />
+                                            <h3>
+                                                LISTEN NOW{' '}
+                                                <span
+                                                    style={{
+                                                        color: '#CD4631',
+                                                        textTransform:
+                                                            'lowercase',
+                                                    }}
+                                                >
+                                                    ({time.min}:{time.sec} min)
+                                                </span>
+                                            </h3>
+                                        </div>
                                     </button>
                                 )}
                             </div>
@@ -105,6 +123,7 @@ const IntroElement = ({ id }: Props) => {
                     id={id}
                     episodes={episodes}
                     getTime={getTimeSound}
+                    style={player ? { display: 'flex' } : { display: 'none' }}
                 />
             ) : null}
         </>

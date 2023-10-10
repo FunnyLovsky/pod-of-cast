@@ -1,28 +1,39 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import useSound from 'use-sound'
 import styles from './soundPlayer.module.scss'
 import { Episodes } from '../../types/types'
+import { GiPauseButton } from '@react-icons/all-files/gi/GiPauseButton'
+import { FaPlay } from '@react-icons/all-files/fa/FaPlay'
+
+interface Style {
+    display: string
+}
 
 interface Props {
     id: number
     episodes: Episodes[]
     getTime: ({ min, sec, duration }: Time) => void
+    style: Style
 }
 
 interface Time {
     min: number
-    sec: number
+    sec: string
     duration: number
 }
 const formatTime = (seconds: number) => {
     if (seconds === 0) {
         return {
             min: 0,
-            sec: 0,
+            sec: '00',
         }
     } else {
         const min = Math.floor(seconds / 60)
-        const sec = Math.floor(seconds % 60)
+        const formSec = Math.floor(seconds % 60)
+        const sec =
+            String(formSec).length == 1
+                ? '0' + String(formSec)
+                : String(formSec)
         return {
             min,
             sec,
@@ -30,19 +41,30 @@ const formatTime = (seconds: number) => {
     }
 }
 
-const SoundPlayer = ({ id, episodes, getTime }: Props) => {
+const SoundPlayer = ({ id, episodes, getTime, style }: Props) => {
     const [play, { pause, duration, sound }] = useSound(episodes[id].audio)
     const [isPlaying, setIsPlaying] = useState(false)
     const [currTime, setCurrTime] = useState(formatTime(0))
     const [fullTime, setFullTime] = useState({
         min: 0,
-        sec: 0,
+        sec: '00',
         duration: 0,
     })
+    const range = useRef<HTMLInputElement | null>(null)
+
+    const handleInputBack = () => {
+        if (range.current) {
+            const min = Number(range.current.min)
+            const max = Number(range.current.max)
+            const val = Number(range.current.value)
+            const result = ((val - min) * 100) / (max - min)
+            range.current.style.backgroundSize = String(result) + '% 100%'
+        }
+    }
 
     useEffect(() => {
         getTime(fullTime)
-    }, [getTime, fullTime, duration])
+    }, [fullTime, getTime])
 
     useEffect(() => {
         if (duration) {
@@ -52,6 +74,10 @@ const SoundPlayer = ({ id, episodes, getTime }: Props) => {
                 duration: sec,
             })
         }
+
+        if (duration == 0) {
+            setIsPlaying(false)
+        }
     }, [duration])
 
     useEffect(() => {
@@ -60,6 +86,7 @@ const SoundPlayer = ({ id, episodes, getTime }: Props) => {
                 const currentTime = sound.seek([])
                 setCurrTime(formatTime(currentTime))
             }
+            handleInputBack()
         }, 10)
         return () => clearInterval(interval)
     }, [sound])
@@ -84,7 +111,7 @@ const SoundPlayer = ({ id, episodes, getTime }: Props) => {
     }
 
     return (
-        <div className={styles.music_player}>
+        <div className={styles.music_player} style={style}>
             <div className={styles.music_info}>
                 <img src={episodes[id].img} alt="" />
                 <div className={styles.music_title}>
@@ -110,12 +137,14 @@ const SoundPlayer = ({ id, episodes, getTime }: Props) => {
                         <input
                             type="range"
                             min="0"
-                            max={fullTime.duration}
-                            value={currTime.min * 60 + currTime.sec}
+                            max={Math.floor(fullTime.duration)}
+                            value={sound.seek([])}
                             className={styles.timeline}
-                            onChange={(e) =>
+                            onChange={(e) => {
                                 sound.seek([Number(e.target.value)])
-                            }
+                                handleInputBack()
+                            }}
+                            ref={range}
                         />
                         <div className={styles.time}>
                             <h6 className={styles.current}>
@@ -127,7 +156,7 @@ const SoundPlayer = ({ id, episodes, getTime }: Props) => {
                         </div>
                         <div className={styles.controls}>
                             <button onClick={togglePlayback}>
-                                {isPlaying ? 'Pause' : 'Play'}
+                                {isPlaying ? <GiPauseButton /> : <FaPlay />}
                             </button>
                         </div>
                     </>
