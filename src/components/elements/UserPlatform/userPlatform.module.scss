@@ -27,3 +27,25 @@
 .name {
     font-weight: 500;
 }
+
+@media screen and (max-width: 550px) {
+    .name {
+        font-size: 13px;
+    }
+
+    .item {
+        & h4 {
+            font-size: 13px;
+        }
+    }
+}
+
+// @media screen and (max-width: 450px) {
+//     .item:last-child {
+//         margin-top: 20px;
+//     }
+
+//     .users {
+//         flex-wrap: wrap;
+//     }
+// }

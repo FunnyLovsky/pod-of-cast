@@ -10,7 +10,7 @@ a {
 
 .link {
     @extend %size_body;
-    display: inline;
+    display: inline-block;
     font-weight: 700;
     text-decoration: none;
 

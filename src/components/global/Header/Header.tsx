@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './header.module.scss'
 import './style.scss'
 import Container from '../../ui/Container/Container'
 import LOGO from '../../../assets/images/icons/logo.svg'
-import ArrowDown from '../../../assets/images/vectors/arrowDown.svg'
-import BURGER_MENU from '../../../assets/images/icons/burger_menu.svg'
+
 import { Outlet, Link, NavLink } from 'react-router-dom'
 import { useStrikyHeader } from '../../../hooks/useStrikyHeader'
+import { HiMenuAlt3 } from '@react-icons/all-files/hi/HiMenuAlt3'
+import BurgerMenu from '../../elements/BurgerMenu/BurgerMenu'
+import DropDown from '../../elements/DropDown/DropDown'
 
 const Header = () => {
     const headerClassName = useStrikyHeader()
+    const [isActiveBurger, setIsAcctiveBurger] = useState(false)
 
     const scrollSmooth = () => {
         window.scrollTo({
@@ -19,9 +22,32 @@ const Header = () => {
         })
     }
 
+    const openBurgerMenu = () => {
+        setIsAcctiveBurger(true)
+        document.body.style.overflow = 'hidden'
+        // document.body.style.paddingRight = '15px'
+    }
+
+    const closeBurgerMenu = () => {
+        setIsAcctiveBurger(false)
+        document.body.style.overflow = 'auto'
+        // document.body.style.paddingRight = '0'
+    }
+    const handleBurgerMenu = () => {
+        if (document.documentElement.offsetWidth >= 850) {
+            setIsAcctiveBurger(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleBurgerMenu)
+
+        return () => window.removeEventListener('resize', handleBurgerMenu)
+    }, [])
+
     return (
         <>
-            <header className={headerClassName}>
+            <header data-name="header" className={headerClassName}>
                 <Container>
                     <nav className={styles.nav}>
                         <div className={styles.item}>
@@ -41,29 +67,7 @@ const Header = () => {
                             <NavLink to="/about" className="link">
                                 About
                             </NavLink>
-                            <div className={styles.dropdown}>
-                                <div className={styles.head_link}>
-                                    <span>More</span>
-                                    <img src={ArrowDown} alt="arrow" />
-                                </div>
-                                <div className={styles.drop_menu}>
-                                    <NavLink to="/blog" className="link">
-                                        Blog
-                                    </NavLink>
-                                    <NavLink to="/features" className="link">
-                                        Features
-                                    </NavLink>
-                                    <NavLink to="/pricing" className="link">
-                                        Pricing
-                                    </NavLink>
-                                    <NavLink
-                                        to="/testimonials"
-                                        className="link"
-                                    >
-                                        Testimonials
-                                    </NavLink>
-                                </div>
-                            </div>
+                            <DropDown />
                         </div>
                         <div className={styles.item}>
                             <button
@@ -78,35 +82,17 @@ const Header = () => {
                             </button>
                         </div>
                         <div className={styles.burger_icon}>
-                            <button>
-                                <img src={BURGER_MENU} alt="" />
+                            <button onClick={() => openBurgerMenu()}>
+                                <HiMenuAlt3 />
                             </button>
                         </div>
                     </nav>
                 </Container>
             </header>
-            <div className={styles.burger_menu}>
-                <div className={styles.burger_item}>
-                    <NavLink to="/episode" className="link">
-                        Episode
-                    </NavLink>
-                    <NavLink to="/about" className="link">
-                        About
-                    </NavLink>
-                    <NavLink to="/blog" className="link">
-                        Blog
-                    </NavLink>
-                    <NavLink to="/features" className="link">
-                        Features
-                    </NavLink>
-                    <NavLink to="/pricing" className="link">
-                        Pricing
-                    </NavLink>
-                    <NavLink to="/testimonials" className="link">
-                        Testimonials
-                    </NavLink>
-                </div>
-            </div>
+            {isActiveBurger ? (
+                <BurgerMenu closeBurgerMenu={closeBurgerMenu} />
+            ) : null}
+
             <Outlet />
         </>
     )

@@ -36,5 +36,6 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         'import/no-named-as-default': 0,
         '@typescript-eslint/no-explicit-any': 'error',
+        'jsx-a11y/click-events-have-key-events': 'off',
     },
 }

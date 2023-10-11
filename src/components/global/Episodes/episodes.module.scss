@@ -144,3 +144,9 @@
     color: $color_grey;
     margin-right: 11px;
 }
+
+@media screen and (max-width: 1400px) {
+    .sparkie {
+        display: none;
+    }
+}

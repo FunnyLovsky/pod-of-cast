@@ -11,27 +11,29 @@ const Support = () => {
                 <div className={stules.stroke}></div>
                 <div className={stules.container}>
                     <h3 className={stules.title}>Supported by:</h3>
-                    <a
-                        href="https://spotify.com"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <img src={SPOTIFY} alt="" />
-                    </a>
-                    <a
-                        href="https://podcasts.google.com/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <img src={GOOGLE_POD} alt="" />
-                    </a>
-                    <a
-                        href="https://youtube.com"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <img src={YOUTUBE} alt="" />
-                    </a>
+                    <div className={stules.link}>
+                        <a
+                            href="https://spotify.com"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <img src={SPOTIFY} alt="" />
+                        </a>
+                        <a
+                            href="https://podcasts.google.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <img src={GOOGLE_POD} alt="" />
+                        </a>
+                        <a
+                            href="https://youtube.com"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <img src={YOUTUBE} alt="" />
+                        </a>
+                    </div>
                 </div>
                 <div className={stules.stroke}></div>
             </div>

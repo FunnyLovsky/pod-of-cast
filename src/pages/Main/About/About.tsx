@@ -9,7 +9,7 @@ import Scribble from '../../../components/ui/Scribble/Scribe'
 
 const About = () => {
     return (
-        <div className={styles.about}>
+        <div data-name="about" className={styles.about}>
             <Container>
                 <Scribble type="orange" />
                 <h1 className={styles.title}>

@@ -3,6 +3,7 @@
 .cover {
     display: flex;
     justify-content: center;
+
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -54,5 +55,17 @@
     }
     100% {
         transform: translateX(-1500px);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .cover {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .cover {
+        padding: 120px 15px 0;
     }
 }

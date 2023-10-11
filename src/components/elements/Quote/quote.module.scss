@@ -87,3 +87,58 @@
         transform: rotate(360deg) scale(1);
     }
 }
+
+@media screen and (max-width: 1300px) {
+    .star,
+    .vector {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    .title {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .title {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .title {
+        width: 100%;
+        font-size: 30px;
+    }
+
+    .quote {
+        padding: 0 50px 40px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .title {
+        width: 100%;
+        font-size: 25px;
+    }
+
+    .quote {
+        padding: 0 20px 40px;
+    }
+    .elem {
+        font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .title {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .quote {
+        padding: 0 10px 40px;
+    }
+}

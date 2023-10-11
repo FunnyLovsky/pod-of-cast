@@ -3,7 +3,6 @@
     position: relative;
     width: 100%;
     margin: 0 auto;
-    position: relative;
 }
 
 .scribble {
@@ -40,5 +39,48 @@
         font-style: normal;
         font-weight: 500;
         line-height: 160%; /* 25.6px */
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    .scribble {
+        right: 100px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .scribble {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 800px) {
+    .item {
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .item {
+        & h3 {
+            font-size: 18px;
+        }
+
+        & h5 {
+            font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .item {
+        width: 70%;
+    }
+
+    .inner {
+        justify-content: center;
     }
 }

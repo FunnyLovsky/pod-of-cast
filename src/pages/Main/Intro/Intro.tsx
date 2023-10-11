@@ -9,7 +9,7 @@ import Support from '../../../components/elements/Support/Support'
 const Intro = () => {
     return (
         <>
-            <div className={styles.intro}>
+            <div data-name="intro" className={styles.intro}>
                 <Container>
                     <div className={styles.item}>
                         <h1 className={styles.title}>

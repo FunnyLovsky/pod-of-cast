@@ -97,3 +97,59 @@
         transform: translateX(0) rotate(0deg);
     }
 }
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 850px) {
+    .title {
+        font-size: 86px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .intro {
+        & button {
+            font-size: 12px;
+        }
+    }
+
+    .vector {
+        display: none;
+    }
+
+    .vector_2 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .title {
+        font-size: 76px;
+    }
+
+    .intro {
+        & button {
+            font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .title {
+        font-size: 66px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .title {
+        width: 100%;
+        font-size: 56px;
+    }
+
+    .subtitle {
+        width: 100%;
+    }
+}
