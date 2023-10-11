@@ -1,0 +1,39 @@
+@import '../../../assets/styles/variables.scss';
+
+.item {
+    border-radius: 12px;
+    margin-right: 20px;
+    position: relative;
+    width: 373px;
+    height: 373px;
+    transition: 0.3s;
+
+    & h4 {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    &:hover {
+        transform: translate(-12px, -12px);
+        box-shadow: 12px 12px 0px 0px $color_blue;
+    }
+}
+
+.background {
+    border-radius: 12px;
+}
+
+.icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.title {
+    color: $color_blue;
+    font-size: 36.65px;
+    letter-spacing: -2.932px;
+    line-height: 120%;
+    font-weight: 700;
+}

@@ -20,3 +20,9 @@ export interface Blogs {
     id: number
     category?: string
 }
+
+export interface EpisodeImg {
+    img: string
+    icons: string
+    title: string
+}
