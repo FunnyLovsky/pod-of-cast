@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import styles from '../components/Header/header.module.scss'
+import styles from '../components/global/Header/header.module.scss'
 
 export function useStrikyHeader(): string {
     const [isActive, setIsActive] = useState(false)

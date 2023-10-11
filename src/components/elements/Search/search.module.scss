@@ -1,0 +1,53 @@
+@import '../../../assets/styles/variables.scss';
+
+.inner {
+    position: absolute;
+    top: -37px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.input {
+    position: relative;
+
+    & img {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 50%;
+        left: 40px;
+        transform: translateY(-50%);
+    }
+
+    & input {
+        width: 570px;
+        padding: 24px 0 24px 88px;
+        background: #fff;
+        border-radius: 16px;
+        border: 1.5px solid #000;
+        box-shadow: 6px 6px 0px 0px $color_blue;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%;
+        color: $color_grey;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    & input:focus {
+        border: 1.5px solid none;
+        outline: 3px solid $color_orange;
+    }
+}
+
+.result_search {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    height: auto;
+    background: $color_champane;
+    border-radius: 12px;
+    padding: 15px 0;
+}

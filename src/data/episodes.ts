@@ -4,8 +4,8 @@ import IMG_3 from '../assets/images/photos/cover_5.png'
 import IMG_4 from '../assets/images/photos/cover_3.png'
 import IMG_5 from '../assets/images/photos/cover_4.png'
 import IMG_6 from '../assets/images/photos/cover_2.png'
-import AUDIO_1 from '../assets/music.mp3'
-import AUDIO_2 from '../assets/music_2.mp3'
+import AUDIO_1 from '../assets/audio/music.mp3'
+import AUDIO_2 from '../assets/audio/music_2.mp3'
 import { Episodes } from '../types/types'
 
 export const episodes: Episodes[] = [

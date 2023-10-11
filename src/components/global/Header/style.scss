@@ -1,0 +1,53 @@
+@import '../../../assets/styles/style.scss';
+
+a {
+    color: black;
+}
+
+.active {
+    color: $color_orange;
+}
+
+.link {
+    @extend %size_body;
+    display: inline;
+    font-weight: 700;
+    text-decoration: none;
+
+    margin-right: 60px;
+    position: relative;
+    transition: 0.3s;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+
+        width: 0px;
+        height: 3px;
+        background: $color_orange;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+
+    &:hover {
+        color: $color_orange;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .link {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .link {
+        font-size: 16px;
+    }
+}
