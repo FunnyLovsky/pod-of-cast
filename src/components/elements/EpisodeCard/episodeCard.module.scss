@@ -82,6 +82,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .tags_item {
@@ -122,8 +123,46 @@
     margin-right: 11px;
 }
 
+@media screen and (max-width: 850px) {
+    .title {
+        font-size: 20px;
+    }
+
+    .number {
+        font-size: 14px;
+    }
+
+    .cover {
+        align-items: start;
+    }
+}
+
 @media screen and (max-width: 710px) {
     .card {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .tags_item {
+        width: 100%;
+        justify-content: left;
+    }
+
+    .hostes_item {
+        margin-top: 15px;
+        justify-content: left;
+    }
+    .cover_img {
+        width: 100%;
+    }
+
+    .cover {
+        flex-wrap: wrap;
+    }
+
+    .cover_title {
+        width: 100%;
+        margin-top: 15px;
     }
 }

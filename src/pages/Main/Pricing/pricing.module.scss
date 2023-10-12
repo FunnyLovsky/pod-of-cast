@@ -14,6 +14,7 @@
     display: flex;
     justify-content: space-between;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .sparkle {
@@ -138,4 +139,20 @@
     color: $color_black;
     line-height: 160%; /* 25.6px */
     margin-bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .item {
+        width: 48%;
+    }
+
+    .inner {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .item {
+        width: 100%;
+    }
 }
