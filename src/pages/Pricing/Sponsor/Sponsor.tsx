@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import Container from '../../../components/ui/Container/Container'
-import styles from './pricing.module.scss'
+import styles from './sponsor.module.scss'
 import Title from '../../../components/ui/Title/Title'
 import Scribble from '../../../components/ui/Scribble/Scribe'
 import { pricing } from '../../../data/pricing'
@@ -9,7 +9,7 @@ import Button from '../../../components/ui/Button/Button'
 import SPARKLE from '../../../assets/images/vectors/sparkle_1.svg'
 import VECTOR from '../../../assets/images/vectors/vector_3.svg'
 
-const Pricing: FC = () => {
+const Sponsor: FC = () => {
     return (
         <div className={styles.pricing} id="price">
             <Scribble type="black" />
@@ -78,4 +78,4 @@ const Pricing: FC = () => {
     )
 }
 
-export default Pricing
+export default Sponsor

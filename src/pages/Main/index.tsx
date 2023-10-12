@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 
 import Intro from './Intro/Intro'
 import About from './About/About'
-import Recom from './Recom/Recom'
-import Features from './Features/Features'
+// import Recom from './Recom/Recom'
+// import Features from './Features/Features'
 import Episodes from '../../components/global/Episodes/Episodes'
-import Pricing from './Pricing/Pricing'
+// import Pricing from './Pricing/Pricing'
 import Blog from './Blog/Blog'
 import App from '../../components/global/App/App'
 import Footer from '../../components/global/Footer/Footer'
@@ -19,10 +19,10 @@ const Main = () => {
         <>
             <Intro />
             <About />
-            <Recom />
-            <Features />
+            {/* <Recom /> */}
+            {/* <Features /> */}
             <Episodes />
-            <Pricing />
+            {/* <Pricing /> */}
             <Blog />
             <App />
             <Footer />

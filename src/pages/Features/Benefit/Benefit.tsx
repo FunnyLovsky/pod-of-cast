@@ -1,16 +1,15 @@
 import React, { FC, useEffect } from 'react'
 import Container from '../../../components/ui/Container/Container'
-import styles from './features.module.scss'
+import styles from './benefit.module.scss'
 import Title from '../../../components/ui/Title/Title'
 import Scribble from '../../../components/ui/Scribble/Scribe'
-
 import { features } from '../../../data/features'
 import SCRIBBLE from '../../../assets/images/vectors/scribble_1.svg'
 import Links from '../../../components/ui/Links/Links'
 import { useAdaptiveElem } from '../../../hooks/useAdaptiveElem'
 import Button from '../../../components/ui/Button/Button'
 
-const Features: FC = () => {
+const Benefit: FC = () => {
     const {
         isAdaptive,
         countImg,
@@ -80,4 +79,4 @@ const Features: FC = () => {
     )
 }
 
-export default Features
+export default Benefit
