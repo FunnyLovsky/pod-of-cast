@@ -1,42 +1,15 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import styles from './recom.module.scss'
 import Container from '../../../components/ui/Container/Container'
 import UserPlatform from '../../../components/elements/UserPlatform/UserPlatform'
-import AVATAR_1 from '../../../assets/images/photos/avatar_2.png'
-import AVATAR_2 from '../../../assets/images/photos/avatar_3.png'
-import AVATAR_3 from '../../../assets/images/photos/avatar_4.png'
-import ICON from '../../../assets/images/icons/spotife_icon.svg'
 import Scribble from '../../../components/ui/Scribble/Scribe'
 import SPARCKLE from '../../../assets/images/vectors/sparkle.svg'
 import Title from '../../../components/ui/Title/Title'
 import { AiOutlineRightCircle } from '@react-icons/all-files/ai/AiOutlineRightCircle'
 import { AiOutlineLeftCircle } from '@react-icons/all-files/ai/AiOutlineLeftCircle'
+import { recom } from '../../../data/recom'
 
 const Recom = () => {
-    const [item] = useState([
-        {
-            id: 1,
-            avatar: AVATAR_1,
-            name: 'Luna lovegood,',
-            icon: ICON,
-            text: 'Spotify',
-        },
-        {
-            id: 2,
-            avatar: AVATAR_2,
-            name: 'Emily Blunt,',
-            icon: ICON,
-            text: 'Google Podcast',
-        },
-        {
-            id: 3,
-            avatar: AVATAR_3,
-            name: 'Mia Winters,',
-            icon: ICON,
-            text: 'Apple Podcast',
-        },
-    ])
-
     const sliderRef = useRef<HTMLDivElement>(null)
 
     let itemWidth = 0
@@ -69,7 +42,7 @@ const Recom = () => {
                     />
 
                     <div className={styles.slider} ref={sliderRef}>
-                        {item.map((elem) => (
+                        {recom.map((elem) => (
                             <div key={elem.id} className={styles.item}>
                                 <div className={styles.elem}>“</div>
                                 <div className={styles.text}>

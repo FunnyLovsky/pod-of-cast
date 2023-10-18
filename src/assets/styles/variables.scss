@@ -4,6 +4,10 @@ $color_orange: #cd4631;
 $color_champane: #f7ede8;
 $color_light_blue: #edf3f7;
 $color_blue: #81adc8;
+$color_load: lighten(
+    $color: $color_blue,
+    $amount: 15px,
+);
 
 %transition {
     transition: 0.3s;

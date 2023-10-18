@@ -26,3 +26,11 @@ export interface EpisodeImg {
     icons: string
     title: string
 }
+
+export interface Recom {
+    id: number
+    avatar: string
+    name: string
+    icon: string
+    text: string
+}

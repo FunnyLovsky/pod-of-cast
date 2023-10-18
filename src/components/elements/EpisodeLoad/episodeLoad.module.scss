@@ -14,19 +14,10 @@
     border-radius: 12px;
     padding: 16px;
     margin-bottom: 20px;
-    border: 2px solid black;
+    box-shadow: 10px 10px 0px 0px $color_load;
     transition: 0.3s;
     text-decoration: none;
     color: $color_black;
-
-    &:hover {
-        box-shadow: 10px 10px 0px 0px $color_blue;
-        cursor: pointer;
-    }
-
-    &:hover .title {
-        color: $color_orange;
-    }
 }
 
 .cover {
@@ -38,11 +29,11 @@
 }
 
 .cover_img {
-    width: 160px;
+    width: 30%;
     height: 160px;
+    background: $color_load;
     border-radius: 8px;
     margin-right: 20px;
-    background: $color_load;
 }
 
 .cover_title {
@@ -50,34 +41,32 @@
 }
 
 .number {
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 160%;
-    color: $color_orange;
+    height: 20px;
+    width: 10%;
+    background: $color_load;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 .stroke {
     width: 100%;
     height: 0.5px;
     margin: 15px 0 10px;
-    background: $color_grey;
+    background: $color_load;
 }
 
 .title {
-    font-size: 22.65px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 140%; /* 31.71px */
-    letter-spacing: -0.453px;
-    transition: 0.3s;
+    height: 30px;
+    width: 100%;
+    background: $color_load;
+    border-radius: 12px;
 }
 
 .subtitle {
-    color: $color_grey;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 160%;
+    height: 15px;
+    width: 100%;
+    background: $color_load;
+    border-radius: 8px;
+    margin: 10px 0;
 }
 
 .tag_inner {
@@ -91,6 +80,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.tag {
+    height: 30px;
+    width: 70px;
+    background: $color_load;
+    border-radius: 4px;
+    margin-right: 15px;
 }
 
 .hostes_item {
@@ -136,11 +133,6 @@
 
     .cover {
         align-items: start;
-    }
-
-    .cover_img {
-        width: 30%;
-        height: auto;
     }
 }
 

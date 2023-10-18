@@ -4,7 +4,7 @@ import Intro from './Intro/Intro'
 import About from './About/About'
 // import Recom from './Recom/Recom'
 // import Features from './Features/Features'
-import Episodes from '../../components/global/Episodes/Episodes'
+import Episode from '../../components/global/Episodes/Episodes'
 // import Pricing from './Pricing/Pricing'
 import Blog from './Blog/Blog'
 import App from '../../components/global/App/App'
@@ -18,10 +18,11 @@ const Main = () => {
     return (
         <>
             <Intro />
+
             <About />
             {/* <Recom /> */}
             {/* <Features /> */}
-            <Episodes />
+            <Episode />
             {/* <Pricing /> */}
             <Blog />
             <App />
