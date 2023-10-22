@@ -34,6 +34,7 @@ const Episode: FC = () => {
 
         return () => window.removeEventListener('resize', showAdaptiveCover)
     }, [showAdaptiveCover])
+
     return (
         <div className={styles.episodes}>
             <Scribble type="black" />
@@ -45,10 +46,11 @@ const Episode: FC = () => {
                 />
                 <img src={SPARKLE} alt="scribble" className={styles.sparkie} />
 
-                {!isAdaptive && (
-                    <div className={styles.inner}>
-                        {isLoad ? (
-                            episodes.map((elem, index) => (
+                <div className={styles.inner}>
+                    {isLoad &&
+                        episodes
+                            .slice(0, isAdaptive ? 3 : episodes.length)
+                            .map((elem, index) => (
                                 <EpisodeCard
                                     key={index}
                                     id={elem.id}
@@ -57,47 +59,19 @@ const Episode: FC = () => {
                                     title={elem.title}
                                     tags={elem.tags}
                                 />
-                            ))
-                        ) : (
-                            <>
-                                <EpisodeLoad />
-                                <EpisodeLoad />
-                                <EpisodeLoad />
-                                <EpisodeLoad />
-                                <EpisodeLoad />
-                                <EpisodeLoad />
-                            </>
-                        )}
-                    </div>
-                )}
+                            ))}
 
-                {isAdaptive && (
-                    <div className={styles.inner}>
-                        {isLoad ? (
-                            episodes
-                                .slice(0, 3)
-                                .map((elem, index) => (
-                                    <EpisodeCard
-                                        key={index}
-                                        id={elem.id}
-                                        href={elem.href}
-                                        img={url + elem.img}
-                                        title={elem.title}
-                                        tags={elem.tags}
-                                    />
-                                ))
-                        ) : (
-                            <>
-                                <EpisodeLoad />
-                                <EpisodeLoad />
-                                <EpisodeLoad />
-                                <EpisodeLoad />
-                                <EpisodeLoad />
-                                <EpisodeLoad />
-                            </>
-                        )}
-                    </div>
-                )}
+                    {!isLoad && (
+                        <>
+                            <EpisodeLoad />
+                            <EpisodeLoad />
+                            <EpisodeLoad />
+                            <EpisodeLoad />
+                            <EpisodeLoad />
+                            <EpisodeLoad />
+                        </>
+                    )}
+                </div>
 
                 <Button>
                     <Link to="/episode">BROWSE ALL EPISODES</Link>
