@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import styles from './cover.module.scss'
 import { episodeImg } from '../../../data/episodeImg'
-import Image from '../../ui/Image/Image'
-import Button from '../../ui/Button/Button'
+import Image from '../../../components/ui/Image/Image'
+import Button from '../../../components/ui/Button/Button'
 import { AiOutlineDown } from '@react-icons/all-files/ai/AiOutlineDown'
 import { useAdaptiveElem } from '../../../hooks/useAdaptiveElem'
 

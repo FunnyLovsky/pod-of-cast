@@ -3,7 +3,7 @@ import styles from './intro.module.scss'
 import Container from '../../../components/ui/Container/Container'
 import VECTOR_1 from '../../../assets/images/vectors/vector_4.svg'
 import VECTOR_2 from '../../../assets/images/vectors/vector_2.svg'
-import Cover from '../../../components/elements/Cover/Cover'
+import Cover from '../Cover/Cover'
 import Support from '../../../components/elements/Support/Support'
 
 const Intro = () => {

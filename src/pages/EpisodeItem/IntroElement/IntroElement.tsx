@@ -3,12 +3,14 @@ import styles from './introElement.module.scss'
 import Container from '../../../components/ui/Container/Container'
 import VECTOR_1 from '../../../assets/images/vectors/vector_4.svg'
 import VECTOR_2 from '../../../assets/images/vectors/vector_2.svg'
-import { episodes } from '../../../data/episodes'
+
 import AVATAR from '../../../assets/images/photos/avatar_5.png'
 import Tag from '../../../components/ui/Tag/Tag'
 import { FaPlay } from '@react-icons/all-files/fa/FaPlay'
 import { CgClose } from '@react-icons/all-files/cg/CgClose'
 import SoundPlayer from '../SoundPlayer/SoundPlayer'
+import { useAppSelector } from '../../../store/hooks/hook'
+import { URL_SERVER } from '../../../constans/const'
 
 interface Props {
     id: number
@@ -21,6 +23,7 @@ interface Time {
 }
 
 const IntroElement = ({ id }: Props) => {
+    const { episodes } = useAppSelector((state) => state.episodeReducer)
     const [player, setPlayer] = useState(false)
     const [time, setTime] = useState({
         min: 0,
@@ -40,7 +43,7 @@ const IntroElement = ({ id }: Props) => {
             <div className={styles.intro}>
                 <Container>
                     <div className={styles.inner}>
-                        <img src={episodes[id].img} alt="" />
+                        <img src={URL_SERVER + episodes[id].img} alt="" />
                         <div className={styles.info}>
                             <div className={styles.details}>
                                 <h3 className={styles.number_episode}>

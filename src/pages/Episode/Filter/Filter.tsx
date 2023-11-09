@@ -5,9 +5,13 @@ import Search from '../../../components/elements/Search/Search'
 import EpisodeCard from '../../../components/elements/EpisodeCard/EpisodeCard'
 import NOT_FOUND from '../../../assets/images/icons/not_found.png'
 import { useFilter } from '../../../hooks/useFilter'
-import { episodeCategory, episodes } from '../../../data/episodes'
+import { episodeCategory } from '../../../data/episodes'
+import { useAppSelector } from '../../../store/hooks/hook'
+import { URL_SERVER } from '../../../constans/const'
 
 const Filter = () => {
+    const { episodes } = useAppSelector((state) => state.episodeReducer)
+
     const { activeCategory, filterItems, filterArray } = useFilter(
         episodes,
         episodeCategory
@@ -43,7 +47,7 @@ const Filter = () => {
                                 key={index}
                                 id={elem.id}
                                 href={elem.href}
-                                img={elem.img}
+                                img={URL_SERVER + elem.img}
                                 title={elem.title}
                                 tags={elem.tags}
                             />

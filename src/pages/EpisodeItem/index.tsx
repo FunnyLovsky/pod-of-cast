@@ -5,9 +5,10 @@ import Footer from '../../components/global/Footer/Footer'
 import Episodes from '../../components/global/Episodes/Episodes'
 import IntroElement from './IntroElement/IntroElement'
 import NotFound from '../Error/NotFound/NotFound'
-import { episodes } from '../../data/episodes'
+import { useAppSelector } from '../../store/hooks/hook'
 
 const EpisodeItem = () => {
+    const { episodes } = useAppSelector((state) => state.episodeReducer)
     const { id } = useParams()
     const num = Number(id) - 1
     const title = episodes[num] ? episodes[num].title : 'Not Found'
