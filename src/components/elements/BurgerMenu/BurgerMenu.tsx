@@ -1,6 +1,7 @@
 import { AiOutlineClose } from '@react-icons/all-files/ai/AiOutlineClose'
 import styles from './burgerMenu.module.scss'
 import { NavLink } from 'react-router-dom'
+import { routes } from '../../../router/routes'
 
 interface Props {
     closeBurgerMenu: () => void
@@ -25,48 +26,16 @@ const BurgerMenu: React.FC<Props> = ({ closeBurgerMenu }) => {
                     </button>
                 </div>
                 <div className={styles.burger_item}>
-                    <NavLink
-                        to="/episode"
-                        className="link"
-                        onClick={() => closeBurgerMenu()}
-                    >
-                        Episode
-                    </NavLink>
-                    <NavLink
-                        to="/about"
-                        className="link"
-                        onClick={() => closeBurgerMenu()}
-                    >
-                        About
-                    </NavLink>
-                    <NavLink
-                        to="/blog"
-                        className="link"
-                        onClick={() => closeBurgerMenu()}
-                    >
-                        Blog
-                    </NavLink>
-                    <NavLink
-                        to="/features"
-                        className="link"
-                        onClick={() => closeBurgerMenu()}
-                    >
-                        Features
-                    </NavLink>
-                    <NavLink
-                        to="/pricing"
-                        className="link"
-                        onClick={() => closeBurgerMenu()}
-                    >
-                        Pricing
-                    </NavLink>
-                    <NavLink
-                        to="/testimonials"
-                        className="link"
-                        onClick={() => closeBurgerMenu()}
-                    >
-                        Testimonials
-                    </NavLink>
+                    {routes.map((item, index) => (
+                        <NavLink
+                            to={item.path}
+                            key={index}
+                            className="link"
+                            onClick={() => closeBurgerMenu()}
+                        >
+                            {item.page}
+                        </NavLink>
+                    ))}
                 </div>
                 <div className={styles.burder_item}>
                     <div className={styles.item}>
