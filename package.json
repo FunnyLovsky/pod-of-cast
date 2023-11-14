@@ -2,9 +2,10 @@
     "name": "pod_of_cast",
     "version": "1.0.0",
     "description": "An awesome README template to jumpstart your projects!",
-    "main": "index.js",
+    "main": "./src/index.tsx",
     "scripts": {
         "dev": "webpack server --config __webpack__/webpack.dev.js",
+        "build:dev": "webpack --config __webpack__/webpack.dev.js",
         "build": "webpack --config __webpack__/webpack.prod.js",
         "lint": "eslint --fix .",
         "format": "prettier --write .",

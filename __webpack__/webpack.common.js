@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     entry: path.resolve(__dirname, '..', './src/index.tsx'),
@@ -23,7 +23,7 @@ module.exports = {
             {
                 test: /\.(css|scss)$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader',
                     'sass-loader',
@@ -42,7 +42,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, '..', './build'),
-        filename: '[name].[hash].js',
+        assetModuleFilename: 'assets/[hash][ext][query]',
+        filename: 'js/[name].[hash].js',
         publicPath: '/',
     },
     plugins: [
@@ -71,8 +72,8 @@ module.exports = {
             },
             cache: false, // Disallow caching the assets across webpack builds.
         }),
-        new MiniCSSExtractPlugin({
-            filename: '[name]-[contenthash].css',
+        new MiniCssExtractPlugin({
+            filename: 'css/[name]-[contenthash].css',
         }),
     ],
 }
